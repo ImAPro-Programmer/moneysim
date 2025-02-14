@@ -17,7 +17,7 @@ async function makeRequest() {
         if (!response.ok) throw new Error(`Error: ${response.status}`); // Check for successful response
 
         const data = await response.json(); // Parse response as JSON
-        console.log("Data:", data); // Log the parsed data
+        console.log("Data:", data.userBalance); // Log the parsed data
     } catch (error) {
         console.error("Error found:", error.message); // Handle and log any errors
     }
