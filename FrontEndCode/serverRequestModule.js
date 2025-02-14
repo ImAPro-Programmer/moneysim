@@ -1,18 +1,17 @@
-let options = {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        userBalance: userBal
-    })
-};
 
 console.log("debugging purposes: " + userBal); // Debugging output to check userBal
 
 async function makeRequest() {
     try {
-        const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/", options);
+        const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+         body: JSON.stringify({
+        userBalance: userBal
+    })
+        });
 
         if (!response.ok) throw new Error(`Error: ${response.status}`); // Check for successful response
 
