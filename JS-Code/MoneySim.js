@@ -163,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 userBal = userBal + Math.abs(investmentCalc);
             }
             writeUserBal(userBal);
+            makeRequest();
         } else {
             console.log("Cannot invest yet, cooldown in progress.");
             alert("Cannot invest yet, cooldown in progress: " + investCooldown + " seconds left!");
