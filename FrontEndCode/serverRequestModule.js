@@ -6,16 +6,20 @@ let options = {
     body: JSON.stringify({
         userBalance: userBal
     })
-}
-console.log("debugging purposes: " + userBal);
-async function makeRequest(){
-    try{
+};
+
+console.log("debugging purposes: " + userBal); // Debugging output to check userBal
+
+async function makeRequest() {
+    try {
         const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/", options);
-        if(!response.ok) throw new Error(`Error: ${response.status}`);
-        const data = await response.json();
-        console.log("Data: " + data);
-    } catch(error){
-        console.error("Error found: " + error.message)
+
+        if (!response.ok) throw new Error(`Error: ${response.status}`); // Check for successful response
+
+        const data = await response.json(); // Parse response as JSON
+        console.log("Data:", data); // Log the parsed data
+    } catch (error) {
+        console.error("Error found:", error.message); // Handle and log any errors
     }
 }
-makeRequest();
+makeRequest(); // Execute the function
