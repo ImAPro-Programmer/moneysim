@@ -194,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 userBal = userBal + Math.abs(investmentCalc);
             }
             writeUserBal(userBal);
+            makeRequest();
         } else {
             console.log("Cannot invest yet, cooldown in progress.");
             alert("Cannot invest yet, cooldown in progress: " + investCooldown + " seconds left!");
@@ -224,6 +225,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 userBal = userBal + Math.abs(investmentCalc);
             }
             writeUserBal(userBal);
+            makeRequest();
         } else {
             console.log("Cannot invest yet, cooldown in progress.");
             alert("Cannot invest yet, cooldown in progress: " + investCooldown + " seconds left!");
@@ -253,11 +255,11 @@ document.getElementById("withdrawButton").addEventListener("click", function() {
     increaseIncri = 0;  // Reset the interest increment value
     overwriteSavingsText(increaseIncri);  // Update the displayed savings account balance
     writeUserBal(userBal);  // Update the user balance on the page
+    makeRequest();
 });
 
 
 /*TODO:
-    GET DOMAIN
     TRY AND GET CLOUD DATA STORAGE (optional)]
     LOGIN SYSTEM (for users to get THEIR data)
 */
