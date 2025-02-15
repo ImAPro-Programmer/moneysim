@@ -29,9 +29,11 @@ async function addToKV() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ 
-                key: "userLoginUser" }) // Properly formatting JSON body
-            });
+            body: JSON.stringify({
+                key: "newKeyValue",
+                value: 5000
+            }) // Properly formatting JSON body
+        });
 
         if (!response.ok) throw new Error(`Error ${response.status}`);
 
