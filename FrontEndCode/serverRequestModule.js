@@ -40,9 +40,9 @@ async function addToKV() {
         const getResponse = await response.json(); // Await response from server
         console.log("Server:", getResponse.message);
         console.log("Server:", getResponse.storedValue);
-        if(getResponse.success === false){
+        if(getResponse.success == false){
             grabNewUserEvent.textContent = `Created new login! ${username} is your username and ${password} is your password!`;
-        }else if(getResponse.success === true){
+        }else if(getResponse.success == true){
             grabNewUserEvent.textContent = "Successfuly logged in!";
         }
     } catch (errorFromServer) {
