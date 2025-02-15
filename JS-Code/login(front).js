@@ -2,6 +2,12 @@ let checkUser = "testUser";
 let checkPass = "password";
 let username = "";
 let password = "";
+function displayMainContent(){
+    let mainContent = document.querySelector(".mainContent");
+    let loginScreen = document.querySelector(".loginMenu");
+    mainContent.style.display = "block";
+    loginScreen.style.display = "none";
+}
 document.getElementById("loginButton").addEventListener("click", function () {
     console.log("debugg");
     username = document.getElementById("userLogin").value;
@@ -16,10 +22,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
     console.log("Password:", password);
 
     if(username == checkUser && checkPass == password){
-        let mainContent = document.querySelector(".mainContent");
-        let loginScreen = document.querySelector(".loginMenu");
-        mainContent.style.display = "block";
-        loginScreen.style.display = "none";
+        displayMainContent();
         addToKV();
     }else{
         addToKV();

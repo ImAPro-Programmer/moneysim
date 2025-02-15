@@ -44,8 +44,10 @@ async function addToKV() {
         console.log("Server:", getResponse.storedValue);
         console.log("Server:", getResponse.success);
         if(getResponse.success == false){
+            displayMainContent();
             grabNewUserEvent.textContent = `Created new login! ${username} is your username and ${password} is your password!`;
         }else if(getResponse.success == true){
+            displayMainContent();
             grabNewUserEvent.textContent = "Successfuly logged in!";
         }
     } catch (errorFromServer) {
