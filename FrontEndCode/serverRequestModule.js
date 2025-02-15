@@ -44,5 +44,7 @@ async function addToKV() {
         console.error("Caught an error:", errorFromServer.message);
     }
 }
+
+console.log("test, del later: ", username);
 makeRequest(); // Execute the function
 addToKV();

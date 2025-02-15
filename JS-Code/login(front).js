@@ -1,5 +1,3 @@
-const saveUser = "";
-const savePass = "";
 let checkUser = "testUser";
 let checkPass = "password";
 let username = "";
