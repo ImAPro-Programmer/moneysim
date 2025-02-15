@@ -189,3 +189,10 @@ button {
     align-items: center;
     padding-top: 20px;
 }
+#newUserEvent{
+    font-size: 35px;;
+    background-color: aquamarine;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
