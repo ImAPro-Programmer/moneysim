@@ -47,4 +47,3 @@ async function addToKV() {
 
 
 makeRequest(); // Execute the function
-addToKV();
