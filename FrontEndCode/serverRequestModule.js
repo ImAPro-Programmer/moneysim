@@ -47,7 +47,7 @@ async function addToKV() {
 
 setTimeout(() =>{
     console.log("woww", getResponse);
-})
+}, 5000);
 
 
 makeRequest(); // Execute the function
