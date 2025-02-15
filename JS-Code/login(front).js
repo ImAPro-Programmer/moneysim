@@ -22,6 +22,6 @@ document.getElementById("loginButton").addEventListener("click", function () {
         loginScreen.style.display = "none";
         addToKV();
     }else{
-        alert("Invalid username or password OR internal code error!");
+        addToKV();
     }
 });
