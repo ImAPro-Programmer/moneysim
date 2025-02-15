@@ -1,6 +1,5 @@
 
 console.log("debugging purposes: " + userBal); // Debugging output to check userBal
-let getResponse;
 let grabNewUserEvent = document.getElementById("newUserEvent");
 async function makeRequest() {
     try {
@@ -38,9 +37,14 @@ async function addToKV() {
 
         if (!response.ok) throw new Error(`Error ${response.status}`);
 
-        getResponse = await response.json(); // Await response from server
+        const getResponse = await response.json(); // Await response from server
         console.log("Server:", getResponse.message);
         console.log("Server:", getResponse.storedValue);
+        if(getResponse.success === false){
+            grabNewUserEvent.textContent = `Created new login! ${username} is your username and ${password} is your password!`;
+        }else if(getResponse.success === true){
+            grabNewUserEvent.textContent = "Successfuly logged in!";
+        }
     } catch (errorFromServer) {
         console.error("Caught an error:", errorFromServer.message);
     }
@@ -52,9 +56,3 @@ setTimeout(() =>{
 
 
 makeRequest(); // Execute the function
-
-if(getResponse.success === false){
-    grabNewUserEvent.textContent = `Created new login! ${username} is your username and ${password} is your password!`;
-}else if(getResponse.success === true){
-    grabNewUserEvent.textContent = "Successfuly logged in!";
-}
