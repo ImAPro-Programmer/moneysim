@@ -50,9 +50,9 @@ async function addToKV() {
     }
 }
 
-setTimeout(() =>{
+/*setTimeout(() =>{
     console.log("woww", getResponse);
-}, 5000);
+}, 5000);*/
 
 
 makeRequest(); // Execute the function
