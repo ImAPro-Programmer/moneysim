@@ -30,8 +30,8 @@ async function addToKV() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                key: "newKeyValue",
-                value: 5000
+                key: username,
+                value: password
             }) // Properly formatting JSON body
         });
 
@@ -48,7 +48,3 @@ async function addToKV() {
 
 makeRequest(); // Execute the function
 addToKV();
-
-setInterval(() => {
-    console.log("test, del later: ", username);
-}, 5000);
