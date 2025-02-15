@@ -1,6 +1,7 @@
 
 console.log("debugging purposes: " + userBal); // Debugging output to check userBal
 let getResponse;
+let grabNewUserEvent = document.getElementById("newUserEvent");
 async function makeRequest() {
     try {
         const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/", {
@@ -51,3 +52,9 @@ setTimeout(() =>{
 
 
 makeRequest(); // Execute the function
+
+if(getResponse.success === false){
+    grabNewUserEvent.textContent = `Created new login! ${username} is your username and ${password} is your password!`;
+}else if(getResponse.success === true){
+    grabNewUserEvent.textContent = "Successfuly logged in!";
+}
