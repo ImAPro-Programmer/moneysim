@@ -31,7 +31,6 @@ async function addToKV() {
             },
             body: JSON.stringify({
                 key: "newKeyValue",
-                value: 5000
             }) // Properly formatting JSON body
         });
 
