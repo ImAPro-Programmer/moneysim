@@ -20,6 +20,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
         let loginScreen = document.querySelector(".loginMenu");
         mainContent.style.display = "block";
         loginScreen.style.display = "none";
+        addToKV();
     }else{
         alert("Invalid username or password OR internal code error!");
     }
