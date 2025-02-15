@@ -45,5 +45,7 @@ async function addToKV() {
     }
 }
 
+console.log(getResponse);
+
 
 makeRequest(); // Execute the function
