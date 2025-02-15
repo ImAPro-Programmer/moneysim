@@ -1,5 +1,6 @@
 
 console.log("debugging purposes: " + userBal); // Debugging output to check userBal
+let getResponse;
 let grabNewUserEvent = document.getElementById("newUserEvent");
 async function makeRequest() {
     try {
@@ -37,7 +38,7 @@ async function addToKV() {
 
         if (!response.ok) throw new Error(`Error ${response.status}`);
 
-        const getResponse = await response.json(); // Await response from server
+        getResponse = await response.json(); // Await response from server
         console.log(getResponse);
         console.log("Server:", getResponse.message);
         console.log("Server:", getResponse.storedValue);
