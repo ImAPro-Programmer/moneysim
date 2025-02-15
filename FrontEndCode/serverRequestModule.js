@@ -1,6 +1,6 @@
 
 console.log("debugging purposes: " + userBal); // Debugging output to check userBal
-
+let getResponse;
 async function makeRequest() {
     try {
         const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/", {
@@ -37,7 +37,7 @@ async function addToKV() {
 
         if (!response.ok) throw new Error(`Error ${response.status}`);
 
-        const getResponse = await response.json(); // Await response from server
+        getResponse = await response.json(); // Await response from server
         console.log("Server:", getResponse.message);
         console.log("Server:", getResponse.storedValue);
     } catch (errorFromServer) {
@@ -45,7 +45,9 @@ async function addToKV() {
     }
 }
 
-console.log(getResponse);
+setTimeout(() =>{
+    console.log(getResponse);
+})
 
 
 makeRequest(); // Execute the function
