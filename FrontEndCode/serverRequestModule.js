@@ -39,6 +39,7 @@ async function addToKV() {
 
         const getResponse = await response.json(); // Await response from server
         console.log("Server:", getResponse.message);
+        console.log("Server:", getResponse.storedValue);
     } catch (errorFromServer) {
         console.error("Caught an error:", errorFromServer.message);
     }
