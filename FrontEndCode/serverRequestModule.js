@@ -8,9 +8,9 @@ async function makeRequest() {
         headers: {
             "Content-Type": "application/json"
         },
-         body: JSON.stringify({
-        userBalance: userBal
-    })
+        body: JSON.stringify({
+                userBalance: userBal
+            })
         });
 
         if (!response.ok) throw new Error(`Error: ${response.status}`); // Check for successful response
@@ -21,4 +21,24 @@ async function makeRequest() {
         console.error("Error found:", error.message); // Handle and log any errors
     }
 }
+
+async function addToKV() {
+    try {
+        const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/KV", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ key: "newKeyValue" }) // Properly formatting JSON body
+        });
+
+        if (!response.ok) throw new Error(`Error ${response.status}`);
+
+        const getResponse = await response.json(); // Await response from server
+        console.log("Server:", getResponse);
+    } catch (errorFromServer) {
+        console.error("Caught an error:", errorFromServer.message);
+    }
+}
 makeRequest(); // Execute the function
+addToKV();
