@@ -45,6 +45,10 @@ async function addToKV() {
     }
 }
 
-console.log("test, del later: ", username);
+
 makeRequest(); // Execute the function
 addToKV();
+
+setInterval(() => {
+    console.log("test, del later: ", username);
+}, 5000);
