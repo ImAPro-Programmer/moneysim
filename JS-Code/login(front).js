@@ -30,7 +30,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
     password = document.getElementById("userPass").value;
     console.log("Username:", username);
     console.log("Password:", password);
-    loginToDB();
+    await loginToDB();
 
     console.log("checking credentials");
     if(username == usernameFromDB && password == passwordfromDB){
