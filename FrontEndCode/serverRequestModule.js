@@ -28,7 +28,7 @@ async function makeRequest() {
 async function loginToDB() {
     try {
         const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/user/login", {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
