@@ -25,7 +25,7 @@ async function makeRequest() {
 
 async function addToKV() {
     try {
-        const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/KV", {
+        const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/user/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -43,21 +43,15 @@ async function addToKV() {
         console.log("Server:", getResponse.dbUser);
         console.log("Server:", getResponse.dbPass);
         console.log("Server:", getResponse.success);
-        if(getResponse.success == false){
+        if(getResponse.success == true){
+            if(username == )
             displayMainContent();
             grabNewUserEvent.textContent = `Created new login! ${username} is your username and ${password} is your password!`;
-        }else if(getResponse.success == true){
-            displayMainContent();
-            grabNewUserEvent.textContent = "Successfuly logged in!";
         }
     } catch (errorFromServer) {
         console.error("Caught an error:", errorFromServer.message);
     }
 }
-
-/*setTimeout(() =>{
-    console.log("woww", getResponse);
-}, 5000);*/
 
 
 makeRequest(); // Execute the function
