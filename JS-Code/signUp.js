@@ -1,7 +1,9 @@
-let getSignUpUser = document.getElementById("userSignUp").value;
-let getSignUpPass = document.getElementById("passSignUp").value;
+let getSignUpUser = "";
+let getSignUpPass = "";
 let newUserDialog = document.getElementById("newUserEvent");
 document.getElementById("signUpButton").addEventListener("click", function(){
+    getSignUpUser = document.getElementById("userSignUp").value;
+    getSignUpPass = document.getElementById("passSignUp").value;
     console.log(getSignUpUser);
     console.log(getSignUpPass);
     signUpToDB()
