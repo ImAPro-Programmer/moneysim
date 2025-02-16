@@ -33,8 +33,8 @@ async function loginToDB() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                username: username,
-                password: password
+                Loginusername: username,
+                Loginpassword: password
             }) // Properly formatting JSON body
         });
 
