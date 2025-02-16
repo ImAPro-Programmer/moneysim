@@ -40,8 +40,8 @@ async function addToKV() {
 
         getResponse = await response.json(); // Await response from server
         console.log(getResponse);
-        console.log("Server:", getResponse.message);
-        console.log("Server:", getResponse.storedValue);
+        console.log("Server:", getResponse.dbUser);
+        console.log("Server:", getResponse.dbPass);
         console.log("Server:", getResponse.success);
         if(getResponse.success == false){
             displayMainContent();
