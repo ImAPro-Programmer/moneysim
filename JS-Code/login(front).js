@@ -16,6 +16,14 @@ document.getElementById("signUp").addEventListener("click", function() {
     setLoginMenu.style.display = "none";
 
 });
+document.getElementById("signUp").addEventListener("click", function() {
+    console.log("clicked signup button(debugging)");
+    let setLoginMenu = document.querySelector(".loginMenu");
+    let makeAccMenu = document.querySelector(".signUpMenu");
+    makeAccMenu.style.display = "none";
+    setLoginMenu.style.display = "flex";
+
+});
 document.getElementById("loginButton").addEventListener("click", function () {
     console.log("debugg");
     username = document.getElementById("userLogin").value;
