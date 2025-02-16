@@ -32,6 +32,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
     console.log("Password:", password);
     loginToDB();
 
+    console.log("checking credentials");
     if(username == usernameFromDB && password == passwordfromDB){
         console.log("Logged in!");
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
