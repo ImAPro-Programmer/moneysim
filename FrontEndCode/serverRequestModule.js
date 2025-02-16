@@ -48,7 +48,7 @@ async function loginToDB() {
         usernameFromDB = getResponse.username;
         passwordfromDB = getResponse.password;
     } catch (errorFromServer) {
-        console.error("Caught an error:", errorFromServer.message);
+        console.error("Caught an error:", errorFromServer.status);
     }
 
 }
