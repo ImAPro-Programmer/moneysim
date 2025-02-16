@@ -24,7 +24,7 @@ document.getElementById("switchToLogin").addEventListener("click", function() {
     setLoginMenu.style.display = "flex";
 
 });
-document.getElementById("loginButton").addEventListener("click", function () {
+document.getElementById("loginButton").addEventListener("click", async function () {
     console.log("debugg");
     username = document.getElementById("userLogin").value;
     password = document.getElementById("userPass").value;
