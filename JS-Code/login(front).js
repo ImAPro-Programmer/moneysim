@@ -8,6 +8,13 @@ function displayMainContent(){
     mainContent.style.display = "block";
     loginScreen.style.display = "none";
 }
+document.getElementById("signUp").addEventListener("click", function(){
+    let setLoginMenu = document.querySelector(".loginMenu")''
+    let makeAccMenu = document.querySelector(".signUpMenu");
+    makeAccMenu.style.display = "flex";
+    setLoginMenu.style.display = "none";
+
+})
 document.getElementById("loginButton").addEventListener("click", function () {
     console.log("debugg");
     username = document.getElementById("userLogin").value;
@@ -21,10 +28,5 @@ document.getElementById("loginButton").addEventListener("click", function () {
     console.log("Username:", username);
     console.log("Password:", password);
 
-    if(username == checkUser && checkPass == password){
-        displayMainContent();
-        addToKV();
-    }else{
-        addToKV();
-    }
+    
 });

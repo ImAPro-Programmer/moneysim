@@ -2,6 +2,8 @@
 console.log("debugging purposes: " + userBal); // Debugging output to check userBal
 let getResponse;
 let grabNewUserEvent = document.getElementById("newUserEvent");
+let usernameFromDB;
+let passwordfromDB;
 async function makeRequest() {
     try {
         const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/", {
@@ -23,16 +25,16 @@ async function makeRequest() {
     }
 }
 
-async function addToKV() {
+async function loginToDB() {
     try {
-        const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/user/create", {
-            method: "POST",
+        const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/user/login", {
+            method: "GET",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                key: username,
-                value: password
+                username: username,
+                password: password
             }) // Properly formatting JSON body
         });
 
@@ -40,17 +42,15 @@ async function addToKV() {
 
         getResponse = await response.json(); // Await response from server
         console.log(getResponse);
-        console.log("Server:", getResponse.dbUser);
-        console.log("Server:", getResponse.dbPass);
-        console.log("Server:", getResponse.success);
-        if(getResponse.success == true){
-            if(username == )
-            displayMainContent();
-            grabNewUserEvent.textContent = `Created new login! ${username} is your username and ${password} is your password!`;
-        }
+        console.log("Server:", getResponse.message);
+        console.log("Server:", getResponse.password);
+        console.log("Server: ", getResponse.username)
+        usernameFromDB = getResponse.username;
+        passwordfromDB = getResponse.password;
     } catch (errorFromServer) {
         console.error("Caught an error:", errorFromServer.message);
     }
+
 }
 
 

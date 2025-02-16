@@ -189,6 +189,13 @@ button {
     align-items: center;
     padding-top: 20px;
 }
+.signUpMenu{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
 #newUserEvent{
     font-size: 15px;;
     background-color: aquamarine;
