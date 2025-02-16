@@ -28,14 +28,10 @@ document.getElementById("loginButton").addEventListener("click", function () {
     console.log("debugg");
     username = document.getElementById("userLogin").value;
     password = document.getElementById("userPass").value;
-
-    if (/^\d+$/.test(username)) {
-        alert("INVALID USERNAME, ONLY CHARACTERS ALLOWED");
-        return; // Stop further execution
-    }
-
     console.log("Username:", username);
     console.log("Password:", password);
 
-    
+    loginToDB();
+    console.log("Logged in!");
+    newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
 });

@@ -53,5 +53,25 @@ async function loginToDB() {
 
 }
 
+async function signUpToDB() {
+    try{
+        const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/user/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                addUser = getSignUpUser,
+                addPass = getSignUpPass
+            })
+        });
+
+        if(!response.ok) throw new Error(`Error ${response.status}`);
+
+        serverResponse = await response.json();
+        console.log(serverResponse);
+        
+    }
+}
 
 makeRequest(); // Execute the function
