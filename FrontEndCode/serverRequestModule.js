@@ -44,7 +44,7 @@ async function loginToDB() {
         console.log(getResponse);
         console.log("Server:", getResponse.message);
         console.log("Server:", getResponse.password);
-        console.log("Server: ", getResponse.username)
+        console.log("Server: ", getResponse.username);
         usernameFromDB = getResponse.username;
         passwordfromDB = getResponse.password;
     } catch (errorFromServer) {
