@@ -10,7 +10,7 @@ function displayMainContent(){
 }
 document.getElementById("signUp").addEventListener("click", function() {
     console.log("clicked signup button(debugging)");
-    let setLoginMenu = document.querySelector(".loginMenu")''
+    let setLoginMenu = document.querySelector(".loginMenu");
     let makeAccMenu = document.querySelector(".signUpMenu");
     makeAccMenu.style.display = "flex";
     setLoginMenu.style.display = "none";
