@@ -8,13 +8,14 @@ function displayMainContent(){
     mainContent.style.display = "block";
     loginScreen.style.display = "none";
 }
-document.getElementById("signUp").addEventListener("click", function(){
+document.getElementById("signUp").addEventListener("click", function() {
+    console.log("clicked signup button(debugging)");
     let setLoginMenu = document.querySelector(".loginMenu")''
     let makeAccMenu = document.querySelector(".signUpMenu");
     makeAccMenu.style.display = "flex";
     setLoginMenu.style.display = "none";
 
-})
+});
 document.getElementById("loginButton").addEventListener("click", function () {
     console.log("debugg");
     username = document.getElementById("userLogin").value;
