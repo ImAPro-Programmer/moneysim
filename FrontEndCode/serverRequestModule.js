@@ -61,8 +61,8 @@ async function signUpToDB() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                addUser = getSignUpUser,
-                addPass = getSignUpPass
+                addUser: getSignUpUser,
+                addPass: getSignUpPass
             })
         });
 
