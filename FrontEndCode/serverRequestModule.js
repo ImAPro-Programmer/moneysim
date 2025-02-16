@@ -71,6 +71,8 @@ async function signUpToDB() {
         serverResponse = await response.json();
         console.log(serverResponse);
         
+    }catch(errorFromBackend){
+        console.error("Uh oh! We found an error!", errorFromBackend.message);
     }
 }
 
