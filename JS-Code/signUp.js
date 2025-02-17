@@ -8,12 +8,13 @@ document.getElementById("signUpButton").addEventListener("click", async function
     console.log(getSignUpUser);
     console.log(getSignUpPass);
     await signUpToDB();
-    displayMainContent();
     if(!serverResponse.message == "user already exists!"){
         loginScreen.style.display = "none";
         newUserEvent.textContent = `New account created! username: ${getSignUpUser} and your password is: ${getSignUpPass}!`;
-        console.log("debug for signup");
+        displayMainContent();
+        console.debug("debug for signup");
     }else{
         alert("User already exists! Please login! (or mabye something not working interally which, knowing me is probably the issue lol");
+        console.error("User already exists!");
     }
 })
