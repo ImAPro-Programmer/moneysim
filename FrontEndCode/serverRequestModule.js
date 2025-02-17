@@ -48,7 +48,7 @@ async function loginToDB() {
         console.log("Server:", getResponse.message);
         console.log("Server:", getResponse.password);
         console.log("Server: ", getResponse.username);
-        
+
         usernameFromDB = getResponse.username;
         passwordfromDB = getResponse.password;
         balanceFromDB = getResponse.balanceData;
@@ -80,6 +80,7 @@ async function signUpToDB() {
         serverResponse = await response.json();
         console.log(serverResponse);
         
+        balanceFromDB = serverResponse.balance;
     }catch(errorFromBackend){
         console.error("Uh oh! We found an error!", errorFromBackend.message);
     }
