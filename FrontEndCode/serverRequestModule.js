@@ -81,6 +81,7 @@ async function signUpToDB() {
         console.log(serverResponse);
         
         balanceFromDB = serverResponse.balance;
+        console.log("checkpoint 3");
     }catch(errorFromBackend){
         console.error("Uh oh! We found an error!", errorFromBackend.message);
     }

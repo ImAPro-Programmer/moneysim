@@ -41,6 +41,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
         setTimeout(()=>{
             newUserDialog.remove();
         }, 5000);
+        console.log("checkpoint 1");
     }else{
         console.log("Invalid username or password!");
         alert("Invalid username or password! (could be an interal error too, idk man)");

@@ -1,4 +1,5 @@
-let userBal = 10000;
+var userBal = 10000;
+console.log("checkpoint 2");
 var increaseIncri = 0;
 var getUserBal = document.getElementById("userBal");
 var countdown = 60;
