@@ -23,9 +23,8 @@ async function saveAllData(){
     }
 }
 
-window.addEventListener('beforeunload', function(event) {
-    // Code to execute before the window is closed
+window.onbeforeunload = function() {
     alert("window closing!");
     console.log("Window is about to be closed!");
     saveAllData();
-});
+};
