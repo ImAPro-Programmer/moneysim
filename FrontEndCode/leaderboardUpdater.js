@@ -6,7 +6,7 @@ async function updateLeaderboard(){
         });
     
         if(!response.ok){
-            console.error("Unfortunately an error occured.")
+            console.error("Unfortunately an error occured.");
             throw new Error(response.status);
         }
         const serverInfo = await response.json();
