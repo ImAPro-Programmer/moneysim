@@ -4,6 +4,7 @@ let getResponse;
 let grabNewUserEvent = document.getElementById("newUserEvent");
 let usernameFromDB;
 let passwordfromDB;
+let serverResponse;
 async function makeRequest() {
     try {
         const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/", {
