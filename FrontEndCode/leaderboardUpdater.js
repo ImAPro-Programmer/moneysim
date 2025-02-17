@@ -2,10 +2,7 @@ let top5results;
 async function updateLeaderboard(){
     try{
         const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/updateLeaderboard", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
+            method: "GET"
         });
     
         if(!response.ok){
