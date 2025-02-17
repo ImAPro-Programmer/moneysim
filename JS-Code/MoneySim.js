@@ -165,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             writeUserBal(userBal);
             makeRequest();
-            saveAllData();
         } else {
             console.log("Cannot invest yet, cooldown in progress.");
             alert("Cannot invest yet, cooldown in progress: " + investCooldown + " seconds left!");

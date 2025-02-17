@@ -24,3 +24,7 @@ async function saveAllData() {
         console.error(`We found an error! ${errorFromSend.message}`);
     }
 }
+
+window.onbeforeunload() = function(){
+    saveAllData();
+}
