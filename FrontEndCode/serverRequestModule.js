@@ -4,6 +4,7 @@ let getResponse;
 let grabNewUserEvent = document.getElementById("newUserEvent");
 let usernameFromDB;
 let passwordfromDB;
+let balanceFromDB;
 let serverResponse;
 async function makeRequest() {
     try {
@@ -49,7 +50,7 @@ async function loginToDB() {
         console.log("Server: ", getResponse.username);
         usernameFromDB = getResponse.username;
         passwordfromDB = getResponse.password;
-
+        balanceFromDB = getResponse.balanceData;
         console.log("debugging", usernameFromDB);
         console.log("debugging: ", passwordfromDB);
     } catch (errorFromServer) {
