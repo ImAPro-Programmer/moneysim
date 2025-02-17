@@ -38,7 +38,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
         displayMainContent();
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
         userBal = balanceFromDB;
-        writeUserBal();
+        writeUserBal(userBal);
         setTimeout(()=>{
             newUserDialog.remove();
         }, 5000);
