@@ -43,6 +43,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
         }, 5000);
         console.log("checkpoint 1");
         console.log(balanceFromDB);
+        userBal = balanceFromDB;
     }else{
         console.log("Invalid username or password!");
         alert("Invalid username or password! (could be an interal error too, idk man)");
