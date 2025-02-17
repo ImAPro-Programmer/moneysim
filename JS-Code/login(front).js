@@ -37,5 +37,8 @@ document.getElementById("loginButton").addEventListener("click", async function 
         console.log("Logged in!");
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
         displayMainContent();
+    }else{
+        console.log("Invalid username or password!");
+        alert("Invalid username or password! (could be an interal error too, idk man)");
     }
 });
