@@ -8,7 +8,7 @@ document.getElementById("signUpButton").addEventListener("click", async function
     console.log(getSignUpUser);
     console.log(getSignUpPass);
     await signUpToDB();
-    if(!serverResponse.message == "user already exists!"){
+    if(serverResponse.success == true){
         loginScreen.style.display = "none";
         displayMainContent();
         console.debug("debug for signup");
@@ -16,8 +16,8 @@ document.getElementById("signUpButton").addEventListener("click", async function
         setTimeout(()=>{
             newUserDialog.remove();
         }, 5000)
-    }else{
+    }else if(serverResponse.success == false){
         alert("User already exists! Please login! (or mabye something not working interally which, knowing me is probably the issue lol");
         console.error("User already exists!");
     }
-})
+});
