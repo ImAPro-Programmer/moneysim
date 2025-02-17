@@ -32,7 +32,7 @@ const eventBoosts = {
 //----------declaring variables--------------
 
 function overwriteSavingsText(value){
-    writeSavingsAccount.textContent = "Savings Account Balance: " + value; 
+    writeSavingsAccount.textContent = "Savings Account Balance (takes a bit to update): " + value; 
 };
 
 // Write the user's balance to the page
