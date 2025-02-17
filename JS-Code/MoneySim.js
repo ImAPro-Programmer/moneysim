@@ -239,6 +239,8 @@ document.getElementById("depositButton").addEventListener("click", function() {
     let depositVar = parseFloat(document.getElementById("depositDialog").value);
     if (depositVar > 0) {
         // Add the deposit to the savings balance and start the increase process
+        userBal = userBal - depositVar;
+        writeUserBal(userBal);
         increaseSavingsIdentifier = true;
         increaseSavings(depositVar);
         console.log(depositVar);  // Log the deposit amount for debugging
@@ -254,7 +256,7 @@ document.getElementById("withdrawButton").addEventListener("click", function() {
     userBal = userBal + increaseIncri;  // Add the earned interest to the user balance
     increaseIncri = 0;  // Reset the interest increment value
     overwriteSavingsText(increaseIncri);  // Update the displayed savings account balance
-    writeUserBal(userBal);  // Update the user balance on the page
+      // Update the user balance on the page
     makeRequest();
 });
 
