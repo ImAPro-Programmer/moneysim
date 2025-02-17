@@ -98,7 +98,7 @@ function increaseSavings(depositedVal) {
         } else {
             clearInterval(setLoop);
         }
-    }, 2 * 6000);
+    }, 10 * 6000);
 }
 
 
