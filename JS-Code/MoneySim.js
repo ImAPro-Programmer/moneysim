@@ -197,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function(){
             writeUserBal(userBal);
             makeRequest();
             console.log(username);
-            console.log(Username);
             console.log(usernameFromDB);
         } else {
             console.log("Cannot invest yet, cooldown in progress.");
