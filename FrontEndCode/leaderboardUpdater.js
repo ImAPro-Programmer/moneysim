@@ -5,11 +5,13 @@ async function updateLeaderboard(){
             method: "GET"
         });
     
+        const serverInfo = await serverResponse.json();
+
         if(!serverResponse.ok){
             console.error("Unfortunately an error occured.");
+            console.error(serverInfo);
             throw new Error(response.status);
         }
-        const serverInfo = await serverResponse.json();
         console.log(serverInfo);
         top5results = serverInfo.receivedValues;
         console.log(serverInfo.receivedValues);
