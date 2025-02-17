@@ -14,7 +14,7 @@ document.getElementById("signUpButton").addEventListener("click", async function
         console.debug("debug for signup");
         newUserEvent.textContent = `New account created! username: ${getSignUpUser} and your password is: ${getSignUpPass}!`;
         setTimeout(()=>{
-            newUserEvent.textContent = `${getSignUpUser}'s Account`;
+            newUserDialog.remove();
         }, 5000)
     }else{
         alert("User already exists! Please login! (or mabye something not working interally which, knowing me is probably the issue lol");
