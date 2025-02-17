@@ -23,8 +23,4 @@ async function saveAllData(){
     }
 }
 
-window.onbeforeunload = function() {
-    alert("window closing!");
-    console.log("Window is about to be closed!");
-    saveAllData();
-};
+saveAllData();
