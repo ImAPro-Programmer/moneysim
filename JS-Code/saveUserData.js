@@ -7,7 +7,7 @@ async function saveAllData() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                userToFind: usernameFromDB,
+                userToFind: finalUsernameToUse,
                 saveBal: userBal
             })
         });
