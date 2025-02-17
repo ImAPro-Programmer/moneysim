@@ -35,7 +35,8 @@ async function loginToDB() {
             },
             body: JSON.stringify({
                 Loginusername: username,
-                Loginpassword: password
+                Loginpassword: password,
+                getUserBalance: userBal
             }) // Properly formatting JSON body
         });
 
@@ -66,7 +67,8 @@ async function signUpToDB() {
             },
             body: JSON.stringify({
                 addUser: getSignUpUser,
-                addPass: getSignUpPass
+                addPass: getSignUpPass,
+                addBal: userBal
             })
         });
 
