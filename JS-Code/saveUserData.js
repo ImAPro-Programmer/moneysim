@@ -26,5 +26,6 @@ async function saveAllData() {
 }
 
 window.onbeforeunload() = function(){
+    console.log("UNLOADING");
     saveAllData();
 }
