@@ -14,8 +14,8 @@ async function updateLeaderboard(){
         }
         const serverInfo = await response.json();
         console.log(serverInfo);
-        top5results = serverInfo.top5;
-        console.log(serverInfo.top5);
+        top5results = serverInfo.receivedValues;
+        console.log(serverInfo.receivedValues);
     }catch(serverError){
         console.error("whoops! an error occured!", serverError.message);
     }
