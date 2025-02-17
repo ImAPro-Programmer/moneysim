@@ -25,7 +25,9 @@ async function saveAllData() {
     }
 }
 
-window.onbeforeunload() = function(){
-    console.log("UNLOADING");
-    saveAllData();
-}
+window.addEventListener('beforeunload', function(event) {
+    // Code to execute before the window is closed
+    alert("window closing!");
+    console.log("Window is about to be closed!");
+    saveAllData(); // Call your save function before the window is closed
+});
