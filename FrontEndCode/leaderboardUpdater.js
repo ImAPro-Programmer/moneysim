@@ -14,9 +14,16 @@ async function updateLeaderboard(){
             top5results = serverInfo.receivedValues;
             console.log(serverInfo.receivedValues.results);
             let outputUsernames;
+            let overwriteLeaderboard;
             for(i = 0; i < serverInfo.receivedValues.results.length; i++){
                 outputUsernames = serverInfo.receivedValues.results[i].username;
+                overwriteLeaderboard = document.getElementById(`number${i}`)
+
                 console.log(outputUsernames);
+
+                if(overwriteLeaderboard){
+                    overwriteLeaderboard.textContent = outputUsernames;
+                }
             }
         }
     }catch(serverError){
