@@ -15,7 +15,7 @@ async function updateLeaderboard(){
             console.log(serverInfo.receivedValues.results);
             let outputUsernames;
             for(i = 0; i < serverInfo.receivedValues.results.length; i++){
-                outputUsernames = serverInfo.receivedValues.results[i];
+                outputUsernames = serverInfo.receivedValues.results[i].username;
                 console.log(outputUsernames);
             }
         }
