@@ -1,9 +1,7 @@
 let top5results;
 async function updateLeaderboard(){
     try{
-        const serverResponse = await fetch("https://moneysimworker.coolreybansal.workers.dev/updateLeaderboard", {
-            method: "GET"
-        });
+        const serverResponse = await fetch("https://moneysimworker.coolreybansal.workers.dev/updateLeaderboard");
     
         const serverInfo = await serverResponse.json();
 
