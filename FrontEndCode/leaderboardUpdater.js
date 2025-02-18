@@ -13,7 +13,11 @@ async function updateLeaderboard(){
             console.log(serverInfo);
             top5results = serverInfo.receivedValues;
             console.log(serverInfo.receivedValues.results);
-            
+            let outputUsernames;
+            for(i = 0; i < serverInfo.receivedValues.results.length; i++){
+                outputUsernames = serverInfo.receivedValues.results[i];
+                console.log(outputUsernames);
+            }
         }
     }catch(serverError){
         console.error("whoops! an error occured!", serverError.message);
