@@ -17,7 +17,7 @@ async function updateLeaderboard(){
             let overwriteLeaderboard;
             for(i = 0; i < serverInfo.receivedValues.results.length; i++){
                 outputUsernames = serverInfo.receivedValues.results[i].username;
-                overwriteLeaderboard = document.getElementById(`number${i}`)
+                overwriteLeaderboard = document.getElementById(`number${i + 1}`)
 
                 console.log(outputUsernames);
 
