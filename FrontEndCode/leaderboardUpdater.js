@@ -12,7 +12,8 @@ async function updateLeaderboard(){
         }else{
             console.log(serverInfo);
             top5results = serverInfo.receivedValues;
-            console.log(serverInfo.receivedValues);
+            console.log(serverInfo.receivedValues.results);
+            
         }
     }catch(serverError){
         console.error("whoops! an error occured!", serverError.message);
