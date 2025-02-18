@@ -31,4 +31,4 @@ async function updateLeaderboard(){
     }
 }
 
-setInterval(updateLeaderboard(), 5 * 1000)
+setInterval(updateLeaderboard(), 60000)
