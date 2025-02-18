@@ -33,4 +33,6 @@ async function updateLeaderboard(){
     }
 }
 
+
+updateLeaderboard();
 setInterval(updateLeaderboard(), 60000)
