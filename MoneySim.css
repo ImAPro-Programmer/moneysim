@@ -229,8 +229,8 @@ button {
 }
 .leaderboard{
     background-color: aqua;  /* Sets the background color to aqua */
-    width: 250px;             /* Width of the div */
-    height: 320px;            /* Height of the div */
+    width: 320px;             /* Width of the div */
+    height: 350px;            /* Height of the div */
     position: absolute;       /* Allows you to position it precisely */
     top: 50%;                 /* Centers it vertically (you can adjust) */
     right: 0;                 /* Moves it to the right edge of the page */
