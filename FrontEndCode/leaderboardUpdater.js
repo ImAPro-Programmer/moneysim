@@ -24,7 +24,7 @@ async function updateLeaderboard(){
                 console.log(outputUsernames);
 
                 if(overwriteLeaderboard){
-                    overwriteLeaderboard.textContent = outputUsernames + " : " + outputBalance;
+                    overwriteLeaderboard.textContent = outputUsernames + " : " + outputBalance + "$";
                 }
             }
         }
