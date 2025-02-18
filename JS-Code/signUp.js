@@ -6,8 +6,6 @@ let finalUsernameToUse;
 document.getElementById("signUpButton").addEventListener("click", async function(){
     getSignUpUser = document.getElementById("userSignUp").value;
     getSignUpPass = document.getElementById("passSignUp").value;
-    console.log(getSignUpUser);
-    console.log(getSignUpPass);
     await signUpToDB();
     if(serverResponse.success == true){
         loginScreen.style.display = "none";

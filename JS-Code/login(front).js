@@ -28,8 +28,6 @@ document.getElementById("loginButton").addEventListener("click", async function 
     console.log("debugg");
     username = document.getElementById("userLogin").value;
     password = document.getElementById("userPass").value;
-    console.log("Username:", username);
-    console.log("Password:", password);
     await loginToDB();
 
     console.log("checking credentials");
@@ -42,8 +40,6 @@ document.getElementById("loginButton").addEventListener("click", async function 
         setTimeout(()=>{
             newUserDialog.remove();
         }, 5000);
-        console.log("checkpoint 1");
-        console.log(balanceFromDB);
         finalUsernameToUse = usernameFromDB;
     }else{
         console.log("Invalid username or password!");

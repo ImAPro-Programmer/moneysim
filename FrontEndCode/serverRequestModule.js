@@ -45,16 +45,10 @@ async function loginToDB() {
 
         getResponse = await response.json(); // Await response from server
         console.log(getResponse);
-        console.log("Server:", getResponse.message);
-        console.log("Server:", getResponse.password);
-        console.log("Server: ", getResponse.username);
 
         usernameFromDB = getResponse.username;
         passwordfromDB = getResponse.password;
         balanceFromDB = getResponse.balanceData;
-
-        console.log("debugging", usernameFromDB);
-        console.log("debugging: ", passwordfromDB);
     } catch (errorFromServer) {
         console.error("Caught an error:", errorFromServer.message);
     }
@@ -78,10 +72,8 @@ async function signUpToDB() {
         if(!response.ok) throw new Error(`Error ${response.status}`);
 
         serverResponse = await response.json();
-        console.log(serverResponse);
         
         balanceFromDB = serverResponse.balance;
-        console.log("checkpoint 3");
     }catch(errorFromBackend){
         console.error("Uh oh! We found an error!", errorFromBackend.message);
     }
