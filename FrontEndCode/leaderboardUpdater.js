@@ -9,10 +9,11 @@ async function updateLeaderboard(){
             console.error("Unfortunately an error occured.");
             console.error(serverInfo);
             throw new Error(response.status);
+        }else{
+            console.log(serverInfo);
+            top5results = serverInfo.receivedValues;
+            console.log(serverInfo.receivedValues.results);
         }
-        console.log(serverInfo);
-        top5results = serverInfo.receivedValues;
-        console.log(serverInfo.receivedValues);
     }catch(serverError){
         console.error("whoops! an error occured!", serverError.message);
     }
