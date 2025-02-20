@@ -32,3 +32,7 @@ window.addEventListener('beforeunload', function(event) {
     console.log("Window is about to be closed!");
     saveAllData(); // Call your save function before the window is closed
 });
+
+document.getElementById("testSave").addEventListener("click", function(){
+    saveAllData();
+})
