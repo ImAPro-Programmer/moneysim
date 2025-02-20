@@ -6,6 +6,7 @@ async function saveAllData() {
             headers: {
                 "Content-Type": "application/json"
             },
+            credentials: "include",
             body: JSON.stringify({
                 userToFind: finalUsernameToUse,
                 saveBal: userBal

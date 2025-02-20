@@ -13,6 +13,7 @@ async function makeRequest() {
         headers: {
             "Content-Type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify({
                 userBalance: userBal
             })
@@ -34,6 +35,7 @@ async function loginToDB() {
             headers: {
                 "Content-Type": "application/json"
             },
+            credentials: "include",
             body: JSON.stringify({
                 Loginusername: username,
                 Loginpassword: password,
