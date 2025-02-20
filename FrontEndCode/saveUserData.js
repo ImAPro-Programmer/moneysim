@@ -35,4 +35,4 @@ window.addEventListener('beforeunload', function(event) {
 
 document.getElementById("testSave").addEventListener("click", function(){
     saveAllData();
-})
+});
