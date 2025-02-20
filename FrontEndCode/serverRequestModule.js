@@ -13,6 +13,7 @@ async function makeRequest() {
         headers: {
             "Content-Type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify({
                 userBalance: userBal
             })
