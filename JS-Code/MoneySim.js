@@ -87,6 +87,8 @@ function randomEventGenerator() {
 }
 
 function increaseSavings(depositedVal) {
+    overwriteSavingsText(depositVar);
+    
     const setLoop = setInterval(() => {
         if (increaseSavingsIdentifier === true) {
             // Add the new deposit to the savings balance
