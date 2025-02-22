@@ -8,6 +8,7 @@ async function handleInvestments(stock){
         headers: {
             "Content-Type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify({
             stock: stock
         })
