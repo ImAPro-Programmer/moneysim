@@ -20,7 +20,8 @@ async function handleInvestments(stock){
 
     investmentState = result.investmentState;
     userBalFromServer = result.userBal;
-    
+    console.log(`userbal from server is ${userBalFromServer}`);
+
     if(investmentState == "true"){
         writeUserBal(userBalFromServer);
     }else if(investmentState == "false"){
