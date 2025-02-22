@@ -8,7 +8,7 @@ async function handleInvestments(stock){
         headers: {
             "Content-Type": "application/json"
         },
-        body{
+        body: {
             stock: stock
         }
     });
