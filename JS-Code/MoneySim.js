@@ -30,7 +30,6 @@ const eventBoosts = {
     "Apple iPhone users are switching to Android!": { stock: "Apple", NVIDIAIncri: 3, APPLIncri: -60, TSLAIncri: 2 }
 };
 
-import { handleInvestments } from "./handleInvestments.js";
 //----------declaring variables--------------
 
 function overwriteSavingsText(value){

@@ -2,7 +2,7 @@ let investmentState;
 let userBalFromServer;
 
 //-------storage variables on the top pls---------
-export async function handleInvestments(stock){
+async function handleInvestments(stock){
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/investments", {
         method: "POST",
         headers: {
