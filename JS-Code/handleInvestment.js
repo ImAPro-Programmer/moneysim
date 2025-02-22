@@ -23,7 +23,7 @@ async function handleInvestments(stock){
     
     if(investmentState == "true"){
         writeUserBal(userBalFromServer);
-    }else{
+    }else if(investmentState == "false"){
         console.log("currently on cooldown!");
     }
 }
