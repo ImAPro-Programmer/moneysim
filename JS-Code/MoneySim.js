@@ -142,96 +142,13 @@ document.getElementById("bankDeposit").addEventListener("click", function () {
 //----------increase bank balance from investments
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("NVIDIA").addEventListener("click", function() {
-        let investmentCalc = (1000 * NVIDIAboost / 100) + 1000;
-        
-        if (investCooldown <= 0) {
-            investCooldown = 5; // Set a cooldown time, e.g., 5 seconds
-            console.log("Cooldown started: " + investCooldown + " seconds");
-
-            // Start the cooldown countdown
-            let cooldownInterval = setInterval(function() {
-                investCooldown--;
-                console.log("Cooldown: " + investCooldown);
-
-                if (investCooldown <= 0) {
-                    clearInterval(cooldownInterval); // Stop the countdown when it reaches 0
-                    console.log("Cooldown finished");
-                }
-            }, 1000); // Decrease the cooldown every second (1000 ms)
-
-            // Apply the investment calculation
-            if (NVIDIAboost < 0) {
-                userBal = userBal - Math.abs(investmentCalc);
-            } else {
-                userBal = userBal + Math.abs(investmentCalc);
-            }
-            writeUserBal(userBal);
-        } else {
-            console.log("Cannot invest yet, cooldown in progress.");
-            alert("Cannot invest yet, cooldown in progress: " + investCooldown + " seconds left!");
-        }
+        handleInvestments("NVIDIA");
     });
     document.getElementById("Tesla").addEventListener("click", function(){
-        let investmentCalc = (1000 * TSLAboost / 100) + 1000;
-        
-        if (investCooldown <= 0) {
-            investCooldown = 5; // Set a cooldown time, e.g., 5 seconds
-            console.log("Cooldown started: " + investCooldown + " seconds");
-
-            // Start the cooldown countdown
-            let cooldownInterval = setInterval(function() {
-                investCooldown--;
-                console.log("Cooldown: " + investCooldown);
-
-                if (investCooldown <= 0) {
-                    clearInterval(cooldownInterval); // Stop the countdown when it reaches 0
-                    console.log("Cooldown finished");
-                }
-            }, 1000); // Decrease the cooldown every second (1000 ms)
-
-            // Apply the investment calculation
-            if (TSLAboost < 0) {
-                userBal = userBal - Math.abs(investmentCalc);
-            } else {
-                userBal = userBal + Math.abs(investmentCalc);
-            }
-            writeUserBal(userBal);
-            makeRequest();
-        } else {
-            console.log("Cannot invest yet, cooldown in progress.");
-            alert("Cannot invest yet, cooldown in progress: " + investCooldown + " seconds left!");
-        }
+        handleInvestments("TESLA");
     })
     document.getElementById("APPL").addEventListener("click", function(){
-        let investmentCalc = (1000 * APPLboost / 100) + 1000;
-        
-        if (investCooldown <= 0) {
-            investCooldown = 5; // Set a cooldown time, e.g., 5 seconds
-            console.log("Cooldown started: " + investCooldown + " seconds");
-
-            // Start the cooldown countdown
-            let cooldownInterval = setInterval(function() {
-                investCooldown--;
-                console.log("Cooldown: " + investCooldown);
-
-                if (investCooldown <= 0) {
-                    clearInterval(cooldownInterval); // Stop the countdown when it reaches 0
-                    console.log("Cooldown finished");
-                }
-            }, 1000); // Decrease the cooldown every second (1000 ms)
-
-            // Apply the investment calculation
-            if (APPLboost < 0) {
-                userBal = userBal - Math.abs(investmentCalc);
-            } else {
-                userBal = userBal + Math.abs(investmentCalc);
-            }
-            writeUserBal(userBal);
-            makeRequest();
-        } else {
-            console.log("Cannot invest yet, cooldown in progress.");
-            alert("Cannot invest yet, cooldown in progress: " + investCooldown + " seconds left!");
-        }
+        handleInvestments("APPLE");
     });
 });
 console.log("what were u even expecting to find here lol");
