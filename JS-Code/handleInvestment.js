@@ -8,9 +8,9 @@ async function handleInvestments(stock){
         headers: {
             "Content-Type": "application/json"
         },
-        body: {
+        body: JSON.stringify({
             stock: stock
-        }
+        })
     });
 
     if(!response.ok) throw new Error("An error occured during the handleInvestments request!", response.status);
