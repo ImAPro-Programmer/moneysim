@@ -142,7 +142,11 @@ document.getElementById("bankDeposit").addEventListener("click", function () {
 //----------increase bank balance from investments
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("NVIDIA").addEventListener("click", function() {
-        handleInvestments("NVIDIA");
+        try{
+            handleInvestments("NVIDIA");
+        }catch(err){
+            console.log(`NVIDIA: ${err}`);
+        }
     });
     document.getElementById("Tesla").addEventListener("click", function(){
         handleInvestments("TESLA");
