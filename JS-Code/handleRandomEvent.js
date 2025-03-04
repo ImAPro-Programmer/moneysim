@@ -1,5 +1,6 @@
 let boostfromServer;
 let messageFromServer;
+
 async function randomEventGen(){
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/randomEvent", {
         method: "GET",
@@ -15,7 +16,9 @@ async function randomEventGen(){
 
     boostfromServer = serverReply.boosts;
     messageFromServer = serverReply.message;
+
     console.log(boostfromServer); //delete after production
+    console.log(serverReply.cooldown);
 }
 
 setInterval(randomEventGen, 5000);
