@@ -18,4 +18,4 @@ async function randomEventGen(){
     console.log(boostfromServer); //delete after production
 }
 
-setInterval(randomEventGen(), 5000);
+setInterval(randomEventGen, 5000);
