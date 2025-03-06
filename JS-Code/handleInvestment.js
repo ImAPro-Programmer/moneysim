@@ -1,6 +1,5 @@
 let investmentState;
 let userBalFromServer;
-let isCooldown;
 //-------storage variables on the top pls---------
 async function handleInvestments(stock){
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/investments", {
@@ -20,7 +19,6 @@ async function handleInvestments(stock){
 
     investmentState = result.investmentState;
     userBalFromServer = result.userBal;
-    isCooldown = result.cooldown;
     console.log(`userbal from server is ${userBalFromServer}`);
 
     if(investmentState == "true"){
