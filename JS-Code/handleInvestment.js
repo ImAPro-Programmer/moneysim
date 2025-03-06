@@ -18,7 +18,7 @@ async function handleInvestments(stock){
     const result = await response.json();
 
     investmentState = result.investmentState;
-    userBalFromServer = result.userBalance;
+    userBalFromServer = result.balance;
     console.log(`userbal from server is ${userBalFromServer}`);
 
     if(investmentState == "true"){
