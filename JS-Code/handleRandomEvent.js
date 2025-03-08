@@ -21,4 +21,4 @@ async function randomEventGen(){
     console.log(serverReply.cooldown);
 }
 
-setInterval(randomEventGen, 50000); //edit later!!
+setInterval(randomEventGen, 10000); //edit later!!
