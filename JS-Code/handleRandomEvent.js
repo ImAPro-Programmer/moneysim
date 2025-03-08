@@ -10,7 +10,7 @@ async function randomEventGen(){
         credentials: "include"
     });
 
-    if(!response.ok) throw new Error(`an error occured from randomEventGen! ${response.staus}`);
+    if(!response.ok) throw new Error(`an error occured from randomEventGen! ${response.status}`);
 
     const serverReply = await response.json();
 
