@@ -27,7 +27,7 @@ async function handleInvestments(stock){
         console.log("currently on cooldown!");
     }
 
-    console.log(result.cooldownStatus);
+    console.log(result.cooldownStatus); //return value of cooldown
 }
 
 
