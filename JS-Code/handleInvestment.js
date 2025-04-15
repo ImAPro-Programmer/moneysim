@@ -26,6 +26,8 @@ async function handleInvestments(stock){
     }else if(investmentState == "false"){
         console.log("currently on cooldown!");
     }
+
+    console.log(result.cooldownStatus);
 }
 
 
