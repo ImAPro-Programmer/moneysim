@@ -28,6 +28,8 @@ async function handleInvestments(stock){
     }
 
     console.log(result.cooldownStatus);
+
+    holy cow!!!
 }
 
 
