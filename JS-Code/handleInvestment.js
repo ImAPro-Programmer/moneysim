@@ -17,15 +17,9 @@ async function handleInvestments(stock){
     
     const result = await response.json();
 
-    investmentState = result.investmentState;
-    userBalFromServer = result.balance;
-    console.log(`userbal from server is ${userBalFromServer}`);
+    const coolDownState = result.isCooldown;
 
-    if(investmentState == "true"){
-        writeUserBal(userBalFromServer);
-    }else if(investmentState == "false"){
-        console.log("currently on cooldown!");
-    }
+    console.log("cooldown is " + coolDownState);
 
     console.log(result.cooldownStatus); //return value of cooldown
 }
