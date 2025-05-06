@@ -20,7 +20,8 @@ async function saveAllData() {
         }
 
         const gotResponse = await request.json();  // Await to parse the response
-        console.log(gotResponse);
+        //console.log(gotResponse);
+        notify("Data saved successfully!");
     } catch (errorFromSend) {
         console.error(`We found an error! ${errorFromSend.message}`);
     }

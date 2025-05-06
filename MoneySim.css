@@ -246,26 +246,27 @@ button {
 
 /*extra - for user feedback and basic misc*/
 
-
-
-
-
-
-.notification {
+#notification-container {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #00ff95;
-    color: rgb(0, 88, 27);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+  
+  .notification {
+    background-color: #323232;
+    color: white;
     padding: 15px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: sans-serif;
-    z-index: 1000;
     animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
   }
   
-  /* Slide in from the right */
+  /* Animations */
   @keyframes slideIn {
     from {
       transform: translateX(100%);
@@ -277,11 +278,11 @@ button {
     }
   }
   
-  /* Fade out after 4 seconds */
   @keyframes fadeOut {
     to {
       opacity: 0;
       transform: translateY(-20px);
     }
   }
+  
   

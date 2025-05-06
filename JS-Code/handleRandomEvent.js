@@ -4,16 +4,18 @@ let cooldownfromServ;
 let randomEventMes;
 
 
-const notify = (msg) => {
+function notify(msg) {
+    const container = document.getElementById('notification-container');
     const box = document.createElement('div');
     box.className = 'notification';
     box.textContent = msg;
-    document.body.appendChild(box);
+  
+    container.appendChild(box);
   
     setTimeout(() => {
       box.remove();
-    }, 5000); // remove after 5 seconds
-  };
+    }, 5000); // matches the fadeOut timing
+  }  
 
 async function randomEventGen(){
     console.log("debugging - start of randomEventGen()");
