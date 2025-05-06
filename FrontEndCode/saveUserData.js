@@ -9,7 +9,7 @@ async function saveAllData() {
             credentials: "include",
             body: JSON.stringify({
                 userToFind: finalUsernameToUse,
-                saveBal: userBal
+                saveBal: userBalFromServer
             })
         });
 
