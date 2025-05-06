@@ -23,7 +23,7 @@ async function randomEventGen(){
     randomEventMes = serverReply.eventMessage;
 
     //edit the event message text here
-    document.getElementById("nextCountdown").textContent = randomEventMes;
+    document.getElementById("currentNewsIdentifier").textContent = randomEventMes;
 
     console.log(serverReply);//remove after production
     console.log(boostfromServer); //delete after production
