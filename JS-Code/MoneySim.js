@@ -9,6 +9,17 @@ var increaseSavingsIdentifier = false;
 var writeSavingsAccount = document.getElementById("savingsDialong");
 var savingsBalance = 0;
 
+var randomEvents = [
+    "NVIDIA Released a new GPU",
+    "Tesla released a new car!",
+    "Apple released a new iPhone!",
+    "NVIDIA servers got hacked!",
+    "Tesla crashed millions of cars!",
+    "Apple iPhone users are switching to Android!"
+];
+
+let NVIDIAboost = 0, APPLboost = 0, TSLAboost = 0;
+
 // Object map for event handling
 const eventBoosts = {
     "NVIDIA Released a new GPU": { stock: "NVIDIA", NVIDIAIncri: 15, APPLIncri: -3, TSLAIncri: -5 },
@@ -24,6 +35,25 @@ const eventBoosts = {
 function overwriteSavingsText(value){
     writeSavingsAccount.textContent = "Savings Account Balance (takes a bit to update): " + value; 
 };
+
+// Write the user's balance to the page
+function writeUserBal(balance) {
+    getUserBal.textContent = "Balance: " + balance;
+}
+
+// Countdown function
+function createCountdown() {
+    if (countdown === 0) {
+        countdown = 60;
+    } else {
+        document.getElementById("nextCountdown").textContent = countdown;
+        countdown--;
+    }
+
+    setTimeout(createCountdown, 1000);
+}
+
+
 function increaseSavings(depositedVal) {
     overwriteSavingsText(depositVar);
     
