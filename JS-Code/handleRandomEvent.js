@@ -28,5 +28,3 @@ async function randomEventGen(){
     console.log(boostfromServer); //delete after production
     console.log(cooldownfromServ);
 }
-
-setInterval(randomEventGen, 10000); //edit later!!

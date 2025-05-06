@@ -41,6 +41,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
             newUserDialog.remove();
         }, 5000);
         finalUsernameToUse = usernameFromDB;
+        setInterval(randomEventGen, 10000); //edit later!!
     }else if(getResponse.success == false){
         console.log("Invalid username or password!");
         alert("Invalid username or password! (could be an interal error too, idk man)");
