@@ -20,7 +20,14 @@ async function handleInvestments(stock){
     const coolDownState = result.isCooldown;
 
     console.log("cooldown is " + coolDownState);
-    console.log("balance from serv:" + result.handleInvestmentFunc.balance);
+    
+
+    if(result.handleInvestmentFunc.balance != undefined || result.handleInvestmentFunc.balance > 0){
+        console.log("balance from serv:" + result.handleInvestmentFunc.balance);
+        document.getElementById("userBal").textContent = `Balance: ${result.handleInvestmentFunc.balance}`; // Update the balance on the page
+        //store the balance in a variable for later use
+        userBalFromServer = result.handleInvestmentFunc.balance;
+    }
 }
 
 
