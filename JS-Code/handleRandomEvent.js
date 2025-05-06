@@ -5,6 +5,7 @@ let messageFromServer;
 let cooldownfromServ;
 let randomEventMes;
 async function randomEventGen(){
+    console.log("debugging - start of randomEventGen()");
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/randomEvent", {
         method: "GET",
         headers: {
