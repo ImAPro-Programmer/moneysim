@@ -1,5 +1,3 @@
-const { server } = require("typescript");
-
 let boostfromServer;
 let messageFromServer;
 let cooldownfromServ;
