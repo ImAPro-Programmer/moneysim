@@ -238,3 +238,50 @@ button {
     margin-right: 50px;
     border-radius: 15px;
 }
+
+
+
+
+
+
+/*extra - for user feedback and basic misc*/
+
+
+
+
+
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #00ff95;
+    color: rgb(0, 88, 27);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+    z-index: 1000;
+    animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
+  }
+  
+  /* Slide in from the right */
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Fade out after 4 seconds */
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  

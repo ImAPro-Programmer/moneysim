@@ -2,6 +2,19 @@ let boostfromServer;
 let messageFromServer;
 let cooldownfromServ;
 let randomEventMes;
+
+
+const notify = (msg) => {
+    const box = document.createElement('div');
+    box.className = 'notification';
+    box.textContent = msg;
+    document.body.appendChild(box);
+  
+    setTimeout(() => {
+      box.remove();
+    }, 5000); // remove after 5 seconds
+  };
+
 async function randomEventGen(){
     console.log("debugging - start of randomEventGen()");
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/randomEvent", {
@@ -23,6 +36,11 @@ async function randomEventGen(){
 
     //edit the event message text here
     document.getElementById("currentNewsIdentifier").textContent = randomEventMes;
+
+    
+      
+      // Usage
+    notify("This is your notification message!");
 
     console.log(serverReply);//remove after production
     console.log(boostfromServer); //delete after production
