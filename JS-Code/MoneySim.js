@@ -9,17 +9,6 @@ var increaseSavingsIdentifier = false;
 var writeSavingsAccount = document.getElementById("savingsDialong");
 var savingsBalance = 0;
 
-var randomEvents = [
-    "NVIDIA Released a new GPU",
-    "Tesla released a new car!",
-    "Apple released a new iPhone!",
-    "NVIDIA servers got hacked!",
-    "Tesla crashed millions of cars!",
-    "Apple iPhone users are switching to Android!"
-];
-
-let NVIDIAboost = 0, APPLboost = 0, TSLAboost = 0;
-
 // Object map for event handling
 const eventBoosts = {
     "NVIDIA Released a new GPU": { stock: "NVIDIA", NVIDIAIncri: 15, APPLIncri: -3, TSLAIncri: -5 },
@@ -35,57 +24,6 @@ const eventBoosts = {
 function overwriteSavingsText(value){
     writeSavingsAccount.textContent = "Savings Account Balance (takes a bit to update): " + value; 
 };
-
-// Write the user's balance to the page
-function writeUserBal(balance) {
-    getUserBal.textContent = "Balance: " + balance;
-}
-
-// Countdown function
-function createCountdown() {
-    if (countdown === 0) {
-        countdown = 60;
-    } else {
-        document.getElementById("nextCountdown").textContent = countdown;
-        countdown--;
-    }
-
-    setTimeout(createCountdown, 1000);
-}
-
-// Random event generator
-function randomEventGenerator() {
-    var randomEventCreator = Math.floor(Math.random() * randomEvents.length);
-    setEvent = randomEvents[randomEventCreator];
-    document.getElementById("currentNewsIdentifier").textContent = setEvent;
-
-    // Retrieve the stock and boost from the event map
-    if (setEvent in eventBoosts) {
-        const { stock, NVIDIAIncri, APPLIncri, TSLAIncri } = eventBoosts[setEvent];
-
-        NVIDIAboost = 0;
-        APPLboost = 0;
-        TSLAboost = 0;
-
-        // Update the corresponding stock boost
-        if (stock === "NVIDIA") {
-            NVIDIAboost = NVIDIAIncri;
-            TSLAboost = TSLAIncri;
-            APPLboost = APPLIncri;
-        } else if (stock === "Tesla") {
-            NVIDIAboost = NVIDIAIncri;
-            TSLAboost = TSLAIncri;
-            APPLboost = APPLIncri;
-        } else if (stock === "Apple") {
-            NVIDIAboost = NVIDIAIncri;
-            TSLAboost = TSLAIncri;
-            APPLboost = APPLIncri;
-        }
-    }
-
-    setTimeout(randomEventGenerator, 60 * 1000); // Schedule next event
-}
-
 function increaseSavings(depositedVal) {
     overwriteSavingsText(depositVar);
     
