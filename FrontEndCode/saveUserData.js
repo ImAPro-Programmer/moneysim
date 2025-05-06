@@ -9,7 +9,7 @@ async function saveAllData() {
             credentials: "include",
             body: JSON.stringify({
                 userToFind: finalUsernameToUse,
-                saveBal: userBalFromServer,
+                saveBal: balanceFromDB,
             })
         });
 
@@ -30,7 +30,7 @@ async function saveAllData() {
 function saveAllDataBeforeUnload() {
     const data = {
         userToFind: finalUsernameToUse,
-        saveBal: userBalFromServer
+        saveBal: balanceFromDB
     };
 
     const blob = new Blob([JSON.stringify(data)], { type: "application/json" });

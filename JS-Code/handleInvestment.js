@@ -27,6 +27,7 @@ async function handleInvestments(stock){
         document.getElementById("userBal").textContent = `Balance: ${result.handleInvestmentFunc.balance}`; // Update the balance on the page
         //store the balance in a variable for later use
         userBalFromServer = result.handleInvestmentFunc.balance;
+        balanceFromDB = result.handleInvestmentFunc.balance; // Update the global variable
     }
 }
 
