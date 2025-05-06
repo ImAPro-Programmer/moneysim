@@ -42,7 +42,7 @@ async function randomEventGen(){
     
       
       // Usage
-    notify("A new event has occured!");
+    notify("A new event has occured, check the news!");
 
     console.log(serverReply);//remove after production
     console.log(boostfromServer); //delete after production
