@@ -1,4 +1,4 @@
-async function saveAllData() {
+/*async function saveAllData() {
     try {
         // Await the fetch call to ensure the response is ready
         const request = await fetch("https://moneysimworker.coolreybansal.workers.dev/user/saveData", {
@@ -24,14 +24,34 @@ async function saveAllData() {
     } catch (errorFromSend) {
         console.error(`We found an error! ${errorFromSend.message}`);
     }
+}*/
+
+function saveAllDataBeforeUnload() {
+    const data = {
+        userToFind: finalUsernameToUse,
+        saveBal: userBalFromServer
+    };
+
+    const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
+
+    const success = navigator.sendBeacon(
+        "https://moneysimworker.coolreybansal.workers.dev/user/saveData",
+        blob
+    );
+
+    if (!success) {
+        console.warn("sendBeacon failed to send data.");
+    }
 }
 
-window.addEventListener('beforeunload', function(event) {
+window.addEventListener("beforeunload", saveAllDataBeforeUnload);
+
+/*window.addEventListener('beforeunload', function(event) {
     // Code to execute before the window is closed
     alert("window closing!");
     console.log("Window is about to be closed!");
     saveAllData(); // Call your save function before the window is closed
-});
+});*/
 
 document.getElementById("testSave").addEventListener("click", function(){
     saveAllData();
