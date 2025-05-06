@@ -53,6 +53,39 @@ function createCountdown() {
     setTimeout(createCountdown, 1000);
 }
 
+// Random event generator
+function randomEventGenerator() {
+    var randomEventCreator = Math.floor(Math.random() * randomEvents.length);
+    setEvent = randomEvents[randomEventCreator];
+    document.getElementById("currentNewsIdentifier").textContent = setEvent;
+
+    // Retrieve the stock and boost from the event map
+    if (setEvent in eventBoosts) {
+        const { stock, NVIDIAIncri, APPLIncri, TSLAIncri } = eventBoosts[setEvent];
+
+        NVIDIAboost = 0;
+        APPLboost = 0;
+        TSLAboost = 0;
+
+        // Update the corresponding stock boost
+        if (stock === "NVIDIA") {
+            NVIDIAboost = NVIDIAIncri;
+            TSLAboost = TSLAIncri;
+            APPLboost = APPLIncri;
+        } else if (stock === "Tesla") {
+            NVIDIAboost = NVIDIAIncri;
+            TSLAboost = TSLAIncri;
+            APPLboost = APPLIncri;
+        } else if (stock === "Apple") {
+            NVIDIAboost = NVIDIAIncri;
+            TSLAboost = TSLAIncri;
+            APPLboost = APPLIncri;
+        }
+    }
+
+    setTimeout(randomEventGenerator, 60 * 1000); // Schedule next event
+}
+
 function increaseSavings(depositedVal) {
     overwriteSavingsText(depositVar);
     
