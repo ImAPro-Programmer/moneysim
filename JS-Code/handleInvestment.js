@@ -20,6 +20,7 @@ async function handleInvestments(stock){
     const coolDownState = result.isCooldown;
 
     console.log("cooldown is " + coolDownState);
+    console.log("balance from serv:" + result.handleInvestmentFunc.balance);
 }
 
 
