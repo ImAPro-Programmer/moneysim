@@ -1,4 +1,4 @@
-/*async function saveAllData() {
+async function saveAllData() {
     try {
         // Await the fetch call to ensure the response is ready
         const request = await fetch("https://moneysimworker.coolreybansal.workers.dev/user/saveData", {
@@ -24,7 +24,7 @@
     } catch (errorFromSend) {
         console.error(`We found an error! ${errorFromSend.message}`);
     }
-}*/
+}
 
 function saveAllDataBeforeUnload() {
     const data = {
