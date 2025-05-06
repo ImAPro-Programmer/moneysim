@@ -115,6 +115,7 @@ writeUserBal(userBal);
 
 // Handle invest button click
 document.getElementById("investButton").addEventListener("click", function () {
+    console.log("clicked! (debugging)");
     document.querySelectorAll(".container button").forEach(button => button.style.display = "none"); // Hide container buttons
     document.querySelector(".investMenu").style.display = "flex"; // Show the investMenu
 });
