@@ -1,9 +1,11 @@
 let investmentState;
 let userBalFromServer;
-
-const audio = new Audio('./misc-stuff/cha_ching.mp3'); // Adjusted the path to be relative to the current file
+let checkIfProfitOrLoss;
+const profit = new Audio('./misc-stuff/cha_ching.mp3'); // Adjusted the path to be relative to the current file
+const loss = new Audio('./misc-stuff/windows_error.mp3'); // Adjusted the path to be relative to the current file
 
 //audio.play(); <- this plays the audio file (remove after testing)
+
 //-------storage variables on the top pls---------
 async function handleInvestments(stock){
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/investments", {
@@ -23,6 +25,14 @@ async function handleInvestments(stock){
 
     const coolDownState = result.isCooldown;
 
+    checkIfProfitOrLoss = result.handleInvestmentFunc.investCalc;
+
+    if(checkIfProfitOrLoss > 0){
+        profit.play(); //play cha-ching sound
+    }else if(checkIfProfitOrLoss <= 0){
+        loss.play(); //play windows error sound
+    }
+    
     console.log("cooldown is " + coolDownState);
     
 
