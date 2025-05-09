@@ -1,9 +1,9 @@
 let investmentState;
 let userBalFromServer;
 
-const audio = new Audio('moneysim/misc-stuff/cha_ching.mp3')
+const audio = new Audio('./misc-stuff/cha_ching.mp3'); // Adjusted the path to be relative to the current file
 
-audio.play();
+//audio.play(); <- this plays the audio file (remove after testing)
 //-------storage variables on the top pls---------
 async function handleInvestments(stock){
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/investments", {
