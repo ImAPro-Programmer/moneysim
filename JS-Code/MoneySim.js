@@ -150,10 +150,18 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
     document.getElementById("Tesla").addEventListener("click", function(){
-        handleInvestments("TESLA");
+        try{
+            handleInvestments("TESLA");
+        }catch(err){
+            console.log(`TESLA: ${err}`);
+        }
     })
     document.getElementById("APPL").addEventListener("click", function(){
-        handleInvestments("APPLE");
+        try{
+            handleInvestments("APPLE");
+        }catch(err){
+            console.log(`APPLE: ${err}`);
+        }
     });
 });
 console.log("what were u even expecting to find here lol");
