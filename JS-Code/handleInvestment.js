@@ -38,8 +38,13 @@ async function handleInvestments(stock){
     
 
     if(result.handleInvestmentFunc.balance != undefined || result.handleInvestmentFunc.balance > 0){
+
+        const balanceToUpdate = document.getElementById("userBal").textContent;
+        const balanceValue = parseInt(balanceToUpdate.split(": ")[1].trim());
+        const newBalance = balanceValue + result.handleInvestmentFunc.balance;
+
         console.log("balance from serv:" + result.handleInvestmentFunc.balance);
-        document.getElementById("userBal").textContent = `Balance: ${result.handleInvestmentFunc.balance}`; // Update the balance on the page
+        document.getElementById("userBal").textContent = `Balance: ${newBalance}`; // Update the balance on the page
         //store the balance in a variable for later use
         userBalFromServer = result.handleInvestmentFunc.balance;
         balanceFromDB = result.handleInvestmentFunc.balance; // Update the global variable
