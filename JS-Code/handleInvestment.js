@@ -1,5 +1,4 @@
 let investmentState;
-let userBalFromServer;
 let checkIfProfitOrLoss;
 const profit = new Audio('./misc-stuff/cha_ching.mp3'); // Adjusted the path to be relative to the current file
 const loss = new Audio('./misc-stuff/windows_error.mp3'); // Adjusted the path to be relative to the current file
@@ -38,23 +37,9 @@ async function handleInvestments(stock){
     
 
     if(result.handleInvestmentFunc.balance != undefined || result.handleInvestmentFunc.balance > 0){
-
-        const userBalEl = document.getElementById("userBal");
-        if (userBalEl) {
-            const balanceText = userBalEl.textContent;
-            const balanceValue = Number(balanceText.split(": ")[1]?.trim());
-            const newBalance = balanceValue + result.handleInvestmentFunc.balance;
-            console.log("New Balance:", newBalance);
-        } else {
-            console.error("Element with ID 'userBal' not found.");
-        }
-
-
-        console.log("balance from serv:" + result.handleInvestmentFunc.balance);
-        document.getElementById("userBal").textContent = `Balance: ${newBalance}`; // Update the balance on the page
-        //store the balance in a variable for later use
-        userBalFromServer = result.handleInvestmentFunc.balance;
         balanceFromDB = result.handleInvestmentFunc.balance; // Update the global variable
+        document.getElementById("userBal").textContent = `Balance: ${balanceFromDB}`; // Update the displayed balance
+        console.log("New bal: " + balanceFromDB)
     }
 }
 
