@@ -20,11 +20,15 @@ function notify(msg) {
 async function randomEventGen(){
     console.log("debugging - start of randomEventGen()");
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/randomEvent", {
-        method: "GET",
+        method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        credentials: "include"
+        credentials: "include",
+        body: JSON.stringify({
+          //give username
+          users_username: usernameFromDB,
+        })
     });
 
     if(!response.ok) throw new Error(`an error occured from randomEventGen! ${response.status}`);
