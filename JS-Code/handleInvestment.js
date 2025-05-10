@@ -15,7 +15,8 @@ async function handleInvestments(stock){
         },
         credentials: "include",
         body: JSON.stringify({
-            stock: stock
+            stock: stock,
+            username: usernameFromDB,
         })
     });
 
