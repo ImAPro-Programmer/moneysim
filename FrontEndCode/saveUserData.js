@@ -45,7 +45,7 @@ function saveAllDataBeforeUnload() {
     }
 }
 
-window.addEventListener("beforeunload", saveAllDataBeforeUnload);
+//window.addEventListener("beforeunload", saveAllDataBeforeUnload);
 
 /*window.addEventListener('beforeunload', function(event) {
     // Code to execute before the window is closed
@@ -54,8 +54,8 @@ window.addEventListener("beforeunload", saveAllDataBeforeUnload);
     saveAllData(); // Call your save function before the window is closed
 });*/
 
-document.getElementById("testSave").addEventListener("click", function(){
+/*ocument.getElementById("testSave").addEventListener("click", function(){
     saveAllData();
-});
+});*/
 
-setInterval(saveAllData, 60000);
+//setInterval(saveAllData, 60000);

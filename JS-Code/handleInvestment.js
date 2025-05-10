@@ -39,9 +39,16 @@ async function handleInvestments(stock){
 
     if(result.handleInvestmentFunc.balance != undefined || result.handleInvestmentFunc.balance > 0){
 
-        const balanceToUpdate = document.getElementById("userBal").textContent;
-        const balanceValue = parseInt(balanceToUpdate.split(": ")[1].trim());
-        const newBalance = balanceValue + result.handleInvestmentFunc.balance;
+        const userBalEl = document.getElementById("userBal");
+        if (userBalEl) {
+            const balanceText = userBalEl.textContent;
+            const balanceValue = Number(balanceText.split(": ")[1]?.trim());
+            const newBalance = balanceValue + result.handleInvestmentFunc.balance;
+            console.log("New Balance:", newBalance);
+        } else {
+            console.error("Element with ID 'userBal' not found.");
+        }
+
 
         console.log("balance from serv:" + result.handleInvestmentFunc.balance);
         document.getElementById("userBal").textContent = `Balance: ${newBalance}`; // Update the balance on the page
