@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function(){
 console.log("what were u even expecting to find here lol");
 
 //deposit system!!!
-document.getElementById("depositButton").addEventListener("click", function() {
+/*document.getElementById("depositButton").addEventListener("click", function() {
     let depositVar = parseFloat(document.getElementById("depositDialog").value);
     if (depositVar > 0) {
         // Add the deposit to the savings balance and start the increase process
@@ -190,7 +190,7 @@ document.getElementById("withdrawButton").addEventListener("click", function() {
     //overwriteSavingsText(increaseIncri);  // Update the displayed savings account balance
       // Update the user balance on the page
     writeUserBal();
-});
+});/*
 
 
 /*TODO:
