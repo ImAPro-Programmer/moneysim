@@ -45,7 +45,7 @@ function saveAllDataBeforeUnload() {
     }
 }
 
-//window.addEventListener("beforeunload", saveAllDataBeforeUnload);
+window.addEventListener("beforeunload", saveAllDataBeforeUnload);
 
 /*window.addEventListener('beforeunload', function(event) {
     // Code to execute before the window is closed
@@ -58,4 +58,4 @@ function saveAllDataBeforeUnload() {
     saveAllData();
 });*/
 
-//setInterval(saveAllData, 60000);
+setInterval(saveAllData, 60000);
