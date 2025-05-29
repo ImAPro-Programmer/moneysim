@@ -24,6 +24,22 @@ document.getElementById("switchToLogin").addEventListener("click", function() {
     setLoginMenu.style.display = "flex";
 
 });
+
+
+function loginNoti(msg) {
+    const container = document.getElementById('notification-container');
+    const box = document.createElement('div');
+    box.className = 'login-notification';
+    box.textContent = msg;
+  
+    container.appendChild(box);
+  
+    setTimeout(() => {
+      box.remove();
+    }, 5000); // matches the fadeOut timing
+}
+
+
 document.getElementById("loginButton").addEventListener("click", async function () {
     console.log("debugg");
     username = document.getElementById("userLogin").value;
@@ -35,7 +51,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
         console.log("Logged in!");
         displayMainContent();
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
-        notify(`Logged in! Hello ${usernameFromDB}!`);
+        loginNoti(`Logged in! Hello ${usernameFromDB}!`);
         randomEventGen();
         userBal = balanceFromDB;
         writeUserBal(userBal);
