@@ -35,6 +35,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
         console.log("Logged in!");
         displayMainContent();
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
+        notify(`Logged in! Hello ${usernameFromDB}!`);
         randomEventGen();
         userBal = balanceFromDB;
         writeUserBal(userBal);
