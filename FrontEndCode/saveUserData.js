@@ -1,3 +1,16 @@
+function saveNotify(msg) {
+    const container = document.getElementById('notification-container');
+    const box = document.createElement('div');
+    box.className = 'save-notification';
+    box.textContent = msg;
+  
+    container.appendChild(box);
+  
+    setTimeout(() => {
+      box.remove();
+    }, 5000); // matches the fadeOut timing
+  }
+
 async function saveAllData() {
     try {
         // Await the fetch call to ensure the response is ready
@@ -21,7 +34,7 @@ async function saveAllData() {
 
         const gotResponse = await request.json();  // Await to parse the response
         //console.log(gotResponse);
-        notify("Data saved successfully!");
+        saveNotify("Data saved successfully!");
     } catch (errorFromSend) {
         console.error(`We found an error! ${errorFromSend.message}`);
     }
