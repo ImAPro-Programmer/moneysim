@@ -87,7 +87,7 @@ function randomEventGenerator() {
 }
 
 function increaseSavings(depositedVal) {
-    overwriteSavingsText(depositVar);
+    //overwriteSavingsText(depositVar);
     
     const setLoop = setInterval(() => {
         if (increaseSavingsIdentifier === true) {
@@ -95,7 +95,7 @@ function increaseSavings(depositedVal) {
             savingsBalance += depositedVal;  // Add the deposit amount to the total balance
             depositedVal = savingsBalance * 1.003;
             increaseIncri = Math.round(depositedVal);
-            overwriteSavingsText(increaseIncri);
+            //overwriteSavingsText(increaseIncri);
             console.log(depositedVal);  // Debug (can remove later)
             console.log(increaseIncri);  // Debug (can remove later)
         } else {
@@ -109,7 +109,7 @@ function increaseSavings(depositedVal) {
 
 // Initialize the page when DOM is fully loaded
 document.addEventListener("DOMContentLoaded", createCountdown);
-document.addEventListener("DOMContentLoaded", overwriteSavingsText(increaseIncri))
+//document.addEventListener("DOMContentLoaded", overwriteSavingsText(increaseIncri))
 document.addEventListener("DOMContentLoaded", randomEventGenerator);
 writeUserBal(userBal);
 
@@ -187,7 +187,7 @@ document.getElementById("withdrawButton").addEventListener("click", function() {
     increaseSavingsIdentifier = false;  // Stop the savings growth process
     userBal = userBal + increaseIncri;  // Add the earned interest to the user balance
     increaseIncri = 0;  // Reset the interest increment value
-    overwriteSavingsText(increaseIncri);  // Update the displayed savings account balance
+    //overwriteSavingsText(increaseIncri);  // Update the displayed savings account balance
       // Update the user balance on the page
     writeUserBal();
 });
