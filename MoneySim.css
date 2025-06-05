@@ -1,246 +1,351 @@
-body {
-    background-color: #f5f5f7; /* Very light gray */
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #222; /* Dark gray text */
-}
+    body {
+        background-color: rgb(41, 172, 74);
+        margin: 0;
+        padding: 0;
+    }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-}
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
 
-#title, #userBal {
-    color: #333; /* Medium dark gray */
-    display: inline-flex;
-    padding: 12px 25px;
-    background-color: #e0e0e3; /* Light gray background */
-    border-radius: 30px;
-    justify-content: center;
-    margin: 12px;
-    font-weight: 600;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
+    #title, #userBal {
+        color: black;
+        display: inline-flex;
+        padding: 10px;
+        background-color: wheat;
+        border-radius: 50px;
+        justify-content: center;
+        margin: 10px;
+    }
 
-.container button {
-    margin: 40px 40px 40px 0;
-    background-color: #fafafa; /* Off-white */
-    color: #444; /* Medium dark text */
-    font-size: 22px;
-    border-radius: 8px;
-    border: 1.5px solid #ccc;
-    cursor: pointer;
-    width: 110px;
-    height: 48px;
-    transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
+    .container button {
+        margin: 50px;
+        margin-right: 50px;
+        background-color: rgb(0, 255, 213);
+        
+        font-size: 25px;
+        border-radius: 5px;
+        border-width: 0px;
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+    }
+    .container #newsButton{
+        margin: 50px;
+        margin-right: 50px;
+        background-color: rgb(0, 255, 213);
+        font-size: 25px;
+        border-radius: 5px;
+        border-width: 0px;
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+    }
+    .container #bankDeposit{
+        margin: 50px;
+        margin-right: 50px;
+        background-color: rgb(0, 255, 213);
+        font-size: 25px;
+        border-radius: 5px;
+        border-width: 0px;
+        cursor: pointer;
+        width: 100px;
+        height: 190px;
+    }
+    .investMenu {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        background-color: transparent;
+        width: auto;
+        height: auto;
+        gap: 15px;
+    }
 
-.container button:hover {
-    background-color: #fff;
-    border-color: #888;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    color: #000;
-}
+    .investMenu button {
+        background-color: rgb(0, 255, 213);
+        font-size: 25px;
+        border-radius: 5px;
+        
+        border-width: 0px;
+        cursor: pointer;
+        width: 150px;
+        height: 50px;
+        margin: 5px;
+    }
+    .randomEvent {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    .randomEvent button{
+        background-color: rgb(0, 255, 213);
+        font-size: 25px;
+        border-radius: 5px;
+        border-width: 0px;
+        
+        cursor: pointer;
+        width: 150px;
+        height: 50px;
+        margin: 5px;
+    }
+    button {
+    transition: box-shadow 0.3s ease;
+    }
 
-.container #newsButton {
-    width: 110px;
-    height: 110px;
-}
+    button:hover {
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+    }
 
-.container #bankDeposit {
-    width: 110px;
-    height: 190px;
-}
+    #currentNewsIdentifier{
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+    }
+    .savingAccountDialog {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    button {
+        background-color: rgb(0, 255, 213);
+        font-size: 25px;
+        border-radius: 5px;
+        border-width: 0px;
+        cursor: pointer;
+        width: 150px;
+        height: 50px;
+        margin: 5px;
+    }
+    #nextCountdown{
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+    }
+    #depositDialog{
+        font-family: cursive, serif;
+        background-color: aquamarine;
+        border-radius: 15px;
+        border-width: 0px;
+        padding: 15px;
+    }
+    #depositButton{
+        background-color: rgb(0, 255, 213);
+        font-size: 25px;
+        border-radius: 5px;
+        border-width: 0px;
+        cursor: pointer;
+        width: 150px;
+        height: 50px;
+    }
+    #withdrawButton{
+        background-color: rgb(0, 255, 213);
+        font-size: 25px;
+        border-radius: 5px;
+        border-width: 0px;
+        cursor: pointer;
+        width: 150px;
+        height: 50px;
+        margin-bottom: 50px;
+    }
+    #savingsDialong{
+        font-size: 35px;;
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    #savingsInfo{
+        font-size: 20px;;
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+        margin-top: 0px;
+    }
+    #userLogin{
+        font-size: 20px;;
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+        margin: 5px;
+    }
+    #switchToLogin{
+        background-color: rgb(0, 255, 213);
+        font-size: 25px;
+        border-radius: 5px;
+        border-width: 0px;
+        cursor: pointer;
+        width: 150px;
+        height: 100px;
+        margin: 5px;
+    }
+    #userPass{
+        font-size: 20px;;
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+        margin: 5px;
+    }
+    .mainContent{
+        display: none;
+    }
+    .loginMenu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    .signUpMenu{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    #newUserEvent{
+        font-size: 15px;;
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    #userSignUp{
+        font-size: 20px;;
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+        margin: 5px;
+    }
+    #passSignUp{
+        font-size: 20px;;
+        background-color: aquamarine;
+        border-radius: 15px;
+        padding: 15px;
+        margin: 5px;
+    }
+    .leaderboard{
+        background-color: aqua;  /* Sets the background color to aqua */
+        width: 320px;             /* Width of the div */
+        height: 350px;            /* Height of the div */
+        position: absolute;       /* Allows you to position it precisely */
+        top: 50%;                 /* Centers it vertically (you can adjust) */
+        right: 0;                 /* Moves it to the right edge of the page */
+        padding: 10px;
+        margin-right: 50px;
+        border-radius: 15px;
+    }
 
-.investMenu {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    background-color: transparent;
-    width: auto;
-    height: auto;
-    gap: 15px;
-}
 
-.investMenu button, .randomEvent button, button {
-    background-color: #fafafa;
-    color: #444;
-    font-size: 22px;
-    border-radius: 8px;
-    border: 1.5px solid #ccc;
-    cursor: pointer;
-    width: 150px;
-    height: 48px;
-    margin: 5px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
 
-.investMenu button:hover, .randomEvent button:hover, button:hover {
-    background-color: #fff;
-    border-color: #888;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    color: #000;
-}
 
-#currentNewsIdentifier, #nextCountdown, #depositDialog, #savingsDialong, #savingsInfo, #userLogin, #newUserEvent, #userSignUp, #passSignUp {
-    background-color: #eaeaea; /* Light neutral gray */
-    border-radius: 12px;
-    padding: 15px 20px;
-    color: #222;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    font-weight: 500;
-}
 
-#depositButton, #withdrawButton, #switchToLogin {
-    background-color: #fafafa;
-    color: #444;
-    font-size: 22px;
-    border-radius: 8px;
-    border: 1.5px solid #ccc;
-    cursor: pointer;
-    width: 150px;
-    height: 48px;
-    margin: 5px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
 
-#depositButton:hover, #withdrawButton:hover, #switchToLogin:hover {
-    background-color: #fff;
-    border-color: #888;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    color: #000;
-}
+    /*extra - for user feedback and basic misc*/
 
-.mainContent {
-    display: none;
-}
+    #notification-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000;
+    }
+    
+    .notification {
+        background-color: #323232;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: sans-serif;
+        animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
+    }
+    
+    .login-notification {
+        background-color: #00ff9d;
+        color: rgb(0, 102, 22);
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: sans-serif;
+        animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
+    }
 
-.loginMenu, .signUpMenu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-}
+    .save-notification {
+        background-color: #eeff00;
+        color: rgb(117, 100, 0);
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: sans-serif;
+        animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
+    }
 
-.signUpMenu {
-    display: none;
-}
-
-.leaderboard {
-    background-color: #f0f0f3;
-    width: 320px;
-    height: 350px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    padding: 20px;
-    margin-right: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-    color: #333;
-    font-weight: 600;
-}
-
-/* Notification styles */
-#notification-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
-}
-
-.notification {
-    background-color: #444;
-    color: #eee;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
-}
-
-.login-notification {
-    background-color: #2f855a; /* A softer green */
-    color: #d1f7d1;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
-}
-
-.save-notification {
-    background-color: #ecc94b; /* Muted yellow */
-    color: #5a4b00;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
-}
-
-/* Animations */
-@keyframes slideIn {
-    from {
+    /* Animations */
+    @keyframes slideIn {
+        from {
         transform: translateX(100%);
         opacity: 0;
-    }
-    to {
+        }
+        to {
         transform: translateX(0);
         opacity: 1;
+        }
     }
-}
-
-@keyframes fadeOut {
-    to {
+    
+    @keyframes fadeOut {
+        to {
         opacity: 0;
         transform: translateY(-20px);
+        }
     }
-}
+    
+    /* green flash */
 
-/* Green and red flashes with softer tones */
+    #greenFlash {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(121, 255, 121, 0.75);
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 300ms ease-out;
+        }
+        #greenFlash.active {
+        transition: opacity 50ms ease-in;
+        opacity: 1;
+        }
 
-#greenFlash {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(121, 255, 121, 0.35);
-    z-index: 9999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 300ms ease-out;
-}
-#greenFlash.active {
-    transition: opacity 50ms ease-in;
-    opacity: 1;
-}
+    /* red flash */
+    #redFlash {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 89, 89, 0.75);
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 300ms ease-out;
+        }
+        #redFlash.active {
+        transition: opacity 50ms ease-in;
+        opacity: 1;
+        }
 
-#redFlash {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(255, 89, 89, 0.35);
-    z-index: 9999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 300ms ease-out;
-}
-#redFlash.active {
-    transition: opacity 50ms ease-in;
-    opacity: 1;
-}
