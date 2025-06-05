@@ -112,6 +112,24 @@ document.addEventListener("DOMContentLoaded", createCountdown);
 //document.addEventListener("DOMContentLoaded", overwriteSavingsText(increaseIncri))
 document.addEventListener("DOMContentLoaded", randomEventGenerator);
 writeUserBal(userBal);
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll("button");
+
+    buttons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+        const randomTilt = (Math.random() * 10) - 5;
+        const randomY = -(Math.random() * 4 + 3);
+
+        button.style.transform = `scale(1.1) rotate(${randomTilt}deg) translateY(${randomY}px)`;
+        button.style.transition = "transform 0.2s cubic-bezier(0.25, 1.5, 0.5, 1)";
+    });
+
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "scale(1) rotate(0deg) translateY(0)";
+        button.style.transition = "transform 0.2s ease";
+    });
+    });
+})
 
 // Handle invest button click
 document.getElementById("investButton").addEventListener("click", function () {
@@ -164,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 });
-console.log("what were u even expecting to find here lol");
 
 function flashGreen() {
       const flash = document.getElementById("greenFlash");
