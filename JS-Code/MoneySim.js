@@ -166,6 +166,35 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 console.log("what were u even expecting to find here lol");
 
+function flashGreen() {
+      const flash = document.getElementById("greenFlash");
+
+      // Force reflow to make sure transition resets
+      flash.classList.remove("active");
+      void flash.offsetWidth;
+
+      flash.classList.add("active");
+
+      // Remove 'active' after a short delay to begin slow fade out
+      setTimeout(() => {
+        flash.classList.remove("active");
+      }, 100); // allow flash to fully fade in before starting fade out
+}
+function flashRed() {
+      const flash = document.getElementById("redFlash");
+
+      // Force reflow to make sure transition resets
+      flash.classList.remove("active");
+      void flash.offsetWidth;
+
+      flash.classList.add("active");
+
+      // Remove 'active' after a short delay to begin slow fade out
+      setTimeout(() => {
+        flash.classList.remove("active");
+      }, 100); // allow flash to fully fade in before starting fade out
+}
+
 //deposit system!!!
 /*document.getElementById("depositButton").addEventListener("click", function() {
     let depositVar = parseFloat(document.getElementById("depositDialog").value);

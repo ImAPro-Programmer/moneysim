@@ -29,8 +29,10 @@ async function handleInvestments(stock){
 
     if(checkIfProfitOrLoss > 0){
         profit.play(); //play cha-ching sound
+        flashGreen(); // Call the flashGreen function to flash the green box
     }else if(checkIfProfitOrLoss <= 0){
         loss.play(); //play windows error sound
+        flashRed(); // Call the flashRed function to flash the red box
     }
     
     console.log("cooldown is " + coolDownState);
