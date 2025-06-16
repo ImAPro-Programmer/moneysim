@@ -6,6 +6,7 @@ let playlist = [
     "video_game_lobby.mp3",
 ];
 
+console.log("Background music script loaded successfully!");
 let current = 0;
 let audio = new Audio();
 audio.src = playlist[current];
