@@ -1,9 +1,9 @@
 let playlist = [
-    "chill_lobby.mp3",
-    "nostalgia_lobby.mp3",
-    "sherbet_lobby.mp3",
-    "shop.mp3",
-    "video_game_lobby.mp3",
+    './misc-stuff/chill_lobby.mp3',
+    './misc-stuff/nostalgia_lobby.mp3',
+    './misc-stuff/sherbet_lobby.mp3',
+    './misc-stuff/shop.mp3',
+    './misc-stuff/video_game_lobby.mp3',
 ];
 
 console.log("Background music script loaded successfully!");
