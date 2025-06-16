@@ -9,12 +9,10 @@ let playlist = [
 console.log("Background music script loaded successfully!");
 let current = 0;
 let audio = new Audio();
-audio.src = playlist[current];
-audio.autoplay = true;
-audio.play();
+
 audio.onended = () => {
-    current ++;
-    if (current < playlist.length){
+    current++;
+    if (current < playlist.length) {
         audio.src = playlist[current];
         audio.play();
     } else {
@@ -23,3 +21,14 @@ audio.onended = () => {
         audio.play();
     }
 };
+
+function startMusic() {
+    audio.src = playlist[current];
+    audio.autoplay = true;
+    audio.play().catch(err => {
+        console.warn("Playback prevented:", err);
+    });
+}
+
+document.getElementById("loginButton").addEventListener("click", startMusic);
+document.getElementById("signUpButton").addEventListener("click", startMusic);
