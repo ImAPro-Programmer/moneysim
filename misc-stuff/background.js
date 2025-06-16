@@ -11,6 +11,7 @@ let current = 0;
 let audio = new Audio();
 audio.src = playlist[current];
 audio.autoplay = true;
+audio.play();
 audio.onended = () => {
     current ++;
     if (current < playlist.length){
