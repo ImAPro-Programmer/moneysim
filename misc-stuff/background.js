@@ -24,6 +24,7 @@ audio.onended = () => {
 };
 
 function startMusic() {
+    current = Math.floor(Math.random() * playlist.length); // update current!
     audio.volume = 0.35;
     audio.src = playlist[current];
     audio.autoplay = true;
@@ -31,6 +32,7 @@ function startMusic() {
         console.warn("Playback prevented:", err);
     });
 }
+
 
 document.getElementById("loginButton").addEventListener("click", startMusic);
 document.getElementById("signUpButton").addEventListener("click", startMusic);
