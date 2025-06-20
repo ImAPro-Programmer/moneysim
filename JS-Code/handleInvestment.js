@@ -3,7 +3,20 @@ let checkIfProfitOrLoss;
 const profit = new Audio('./misc-stuff/cha_ching.mp3'); // Adjusted the path to be relative to the current file
 const loss = new Audio('./misc-stuff/windows_error.mp3'); // Adjusted the path to be relative to the current file
 
-//audio.play(); <- this plays the audio file (remove after testing)
+
+
+function cooldownNoti(msg) {
+    const container = document.getElementById('notification-container');
+    const box = document.createElement('div');
+    box.className = 'cooldown-notification';
+    box.textContent = msg;
+  
+    container.appendChild(box);
+  
+    setTimeout(() => {
+      box.remove();
+    }, 5000); // matches the fadeOut timing
+}
 
 //-------storage variables on the top pls---------
 async function handleInvestments(stock){
@@ -19,7 +32,9 @@ async function handleInvestments(stock){
         })
     });
 
-    if(!response.ok) throw new Error("An error occured during the handleInvestments request!", response.status);
+    if(!response.ok){
+        cooldownNoti("Cooldown in progress, please wait before investing again.");
+    };
     
     const result = await response.json();
 

@@ -325,6 +325,15 @@ button{
     animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
 }
 
+.cooldown-notification{
+    background-color: #dd4e4e; /* A softer green */
+    color: #d1f7d1;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 4s forwards;
+}
+
 .save-notification {
     background-color: #ecc94b; /* Muted yellow */
     color: #5a4b00;
