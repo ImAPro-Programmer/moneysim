@@ -2,6 +2,7 @@ let checkUser = "testUser";
 let checkPass = "password";
 let username = "";
 let password = "";
+let settingButton = document.getElementById("setting");
 function displayMainContent(){
     let mainContent = document.querySelector(".mainContent");
     let loginScreen = document.querySelector(".loginMenu");
@@ -52,6 +53,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
         displayMainContent();
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
         loginNoti(`Logged in! Hello ${usernameFromDB}! 👋`);
+        settingButton.style.display = "block"; // Show the settings button
         randomEventGen();
         userBal = balanceFromDB;
         writeUserBal(userBal);

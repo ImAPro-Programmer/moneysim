@@ -116,20 +116,104 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll("button");
 
     buttons.forEach(button => {
-    button.addEventListener("mouseenter", () => {
-        const randomTilt = (Math.random() * 10) - 5;
-        const randomY = -(Math.random() * 4 + 3);
+        // Skip the button with class 'no-effect'
+        if (button.classList.contains("no-effect")) return;
 
-        button.style.transform = `scale(1.1) rotate(${randomTilt}deg) translateY(${randomY}px)`;
+        button.addEventListener("mouseenter", () => {
+            const randomTilt = (Math.random() * 10) - 5;
+            const randomY = -(Math.random() * 4 + 3);
+
+            button.style.transform = `scale(1.1) rotate(${randomTilt}deg) translateY(${randomY}px)`;
+            button.style.transition = "transform 0.2s cubic-bezier(0.25, 1.5, 0.5, 1)";
+        });
+
+        button.addEventListener("mouseleave", () => {
+            button.style.transform = "scale(1) rotate(0deg) translateY(0)";
+            button.style.transition = "transform 0.2s ease";
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll("img");
+
+    buttons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+
+        button.style.transform = `scale(1.1)`;
         button.style.transition = "transform 0.2s cubic-bezier(0.25, 1.5, 0.5, 1)";
     });
 
     button.addEventListener("mouseleave", () => {
-        button.style.transform = "scale(1) rotate(0deg) translateY(0)";
+        button.style.transform = "scale(1)";
         button.style.transition = "transform 0.2s ease";
     });
     });
 })
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const settingIcon = document.getElementById("setting");
+    const div = document.querySelector(".settings");
+
+    settingIcon.addEventListener("click", () => {
+        div.style.display = "flex";
+        // Allow the browser to render the display change before adding the class
+        setTimeout(() => {
+            div.classList.add("open");
+        }, 10); // 10ms is enough
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const closeIcon = document.getElementById("closeSettings");
+    const div = document.querySelector(".settings");
+    const parentDiv = document.querySelector(".settingsMenu");
+    const settingIcon = document.getElementById("setting");
+
+    closeIcon.addEventListener("click", () => {
+        div.classList.remove("open");
+        div.classList.add("close");
+        // Allow the browser to render the display change before adding the class
+        setTimeout(() => {
+            div.style.display = "none";
+            parentDiv.style.display = "none"; // Hide the settings menu
+            settingIcon.style.display = "block"; // Show the settings button again
+            div.classList.remove("close"); // Remove the close class for future use
+        }, 700); // 10ms is enough
+    });
+});
+
+//openning menu:
+document.getElementById("openingButton").addEventListener("click", function() {
+    const openingButton = document.getElementById("openingButton");
+    const openingMenu = document.querySelector(".openingScene");
+
+    openingButton.classList.add("start");
+
+    // Start the openingMenu animation halfway through button animation
+    setTimeout(() => {
+        openingMenu.classList.add("start");
+    }, 750); // 750ms = half of 1.5s
+
+    // Hide the button after the full animation (optional)
+    setTimeout(() => {
+        openingButton.style.display = "none";
+    }, 1500);
+});
+
+
+
+
+
+document.getElementById("setting").addEventListener("click", function() {
+    console.log("clicked settings button (debugging)");
+    document.getElementById("setting").style.display = "none"; // Hide the settings button
+    document.querySelector(".settingsMenu").style.display = "flex"; // Show the settings menu
+    
+
+});
 
 // Handle invest button click
 document.getElementById("investButton").addEventListener("click", function () {

@@ -1,4 +1,6 @@
- body {
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Rubik+Mono+One&display=swap');
+
+body {
     background-color: #f5f5f7; /* Very light gray */
     margin: 0;
     padding: 0;
@@ -65,6 +67,20 @@
     gap: 15px;
 }
 
+button{
+    background-color: #fafafa; /* Off-white */
+    color: #444; /* Medium dark text */
+    font-size: 22px;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    cursor: pointer;
+    width: 150px;
+    height: 48px;
+    margin: 5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
 .investMenu button, .randomEvent button, button {
     background-color: #fafafa;
     color: #444;
@@ -93,8 +109,16 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     font-weight: 500;
 }
-
-#depositButton, #withdrawButton, #switchToLogin {
+#userLogin, #userSignUp, #passSignUp, #userPass {
+    background-color: #eaeaea; /* Light neutral gray */
+    border-radius: 12px;
+    padding: 15px 20px;
+    color: #222;
+    margin: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-weight: 500;
+}
+#depositButton, #withdrawButton{
     background-color: #fafafa;
     color: #444;
     font-size: 22px;
@@ -103,6 +127,19 @@
     cursor: pointer;
     width: 150px;
     height: 48px;
+    margin: 5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+#switchToLogin {
+    background-color: #fafafa;
+    color: #444;
+    font-size: 22px;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    cursor: pointer;
+    width: 150px;
+    height: 90px;
     margin: 5px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -122,6 +159,10 @@
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    position: absolute;
 }
 .signUpMenu {
     display: none;
@@ -140,6 +181,120 @@
     color: #333;
     font-weight: 600;
 }
+
+/*user buttons*/
+
+#setting{
+    cursor: pointer;
+    width: 50px;
+    box-shadow: 2px 2px 10px rgba(150, 150, 150, 0.5); /* horizontal, vertical, blur, color */
+    border-radius: 10px; /* optional rounded corners */
+    background-color: #f0f0f3; /* Light gray background */
+    margin: 10px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: block;
+}
+#setting:hover{
+    background-color: #e0e0e3; /* Slightly darker gray on hover */
+    box-shadow: 2px 2px 15px rgba(100, 100, 100, 0.7); /* Darker shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.settingsMenu {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(136, 136, 136, 0.5); /* semi-transparent overlay */
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.settings {
+  width: 60vw;
+  height: 70vh;
+  background: #9b9b9b;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+  /* centered shadow on all sides */
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  /*transform: scale(0);
+  transition: transform 1.5s cubic-bezier(0.25, 1.5, 0.5, 1);*/
+}
+
+/* animations */
+
+.settings.open{
+    display: flex;
+    animation: popIn 0.7s cubic-bezier(0.25, 1.5, 0.5, 1);
+}
+
+.settings.close{
+    animation: popOut 0.7s cubic-bezier(0.25, 1.5, 0.5, 1);
+    pointer-events: none;
+    display: flex;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.1); /* Slight overshoot */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}   
+
+.settings.open{
+    transform: scale(1);
+    pointer-events: auto;;
+}
+
+
+#settingsLabel{
+    position: absolute;
+    top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Notification styles */
 #notification-container {
     position: fixed;
@@ -232,4 +387,67 @@
 #redFlash.active {
     transition: opacity 50ms ease-in;
     opacity: 1;
+}
+
+
+.openingScene{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 99999999;
+    background: rgb(44, 44, 44);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.openingScene.start{
+    display: flex;
+    animation: fadeOut 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+#openingButton {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 400px;
+    font-family: "Rubik Mono One", sans-serif;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+#openingButton:hover {
+    background-color: #9c9c9e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #000;
+    filter: blur(0.3px);
+    transform: translate(-50%, -50%) scale(1.1); /* order matters! */
+}
+#openingButton.start{
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+    animation: scaleUp 1.5s ease-in-out forwards;
+}
+@keyframes scaleUp{
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(10);
+        opacity: 0;
+    }
 }

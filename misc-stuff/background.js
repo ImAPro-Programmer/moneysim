@@ -34,5 +34,5 @@ function startMusic() {
 }
 
 
-document.getElementById("loginButton").addEventListener("click", startMusic);
-document.getElementById("signUpButton").addEventListener("click", startMusic);
+
+document.getElementById("openingButton").addEventListener("click", startMusic);
