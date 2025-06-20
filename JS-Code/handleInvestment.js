@@ -58,7 +58,7 @@ async function handleInvestments(stock){
     
 
     if(result.handleInvestmentFunc.balance != undefined || result.handleInvestmentFunc.balance > 0){
-        balanceFromDB = result.handleInvestmentFunc.balance; // Update the global variable
+        balanceFromDB = result.originalBal; // Update the global variable
         document.getElementById("userBal").textContent = `Balance: ${balanceFromDB}`; // Update the displayed balance
         console.log("New bal: " + balanceFromDB)
     }
