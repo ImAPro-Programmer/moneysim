@@ -189,18 +189,36 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById("openingButton").addEventListener("click", function() {
     const openingButton = document.getElementById("openingButton");
     const openingMenu = document.querySelector(".openingScene");
+    const openingTitle = document.querySelector(".openingTitle");
 
     openingButton.classList.add("start");
 
     // Start the openingMenu animation halfway through button animation
     setTimeout(() => {
         openingMenu.classList.add("start");
+        openingTitle.classList.add("start");
+
     }, 750); // 750ms = half of 1.5s
 
     // Hide the button after the full animation (optional)
     setTimeout(() => {
         openingButton.style.display = "none";
+        openingTitle.style.display = "none"; // Hide the title after the button animation
     }, 1500);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const allInputBoxes = document.querySelectorAll("input");
+    allInputBoxes.forEach(input => {
+        input.addEventListener("mouseenter", () => {
+            input.style.transform = `scale(1.05)`;
+            input.style.transition = "transform 0.2s cubic-bezier(0.25, 1.5, 0.5, 1)";
+        });
+        input.addEventListener("mouseleave", () => {
+            input.style.transform = "scale(1)";
+            input.style.transition = "transform 0.2s ease";
+        });
+    })
 });
 
 

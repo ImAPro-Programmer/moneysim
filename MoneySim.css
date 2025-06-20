@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Bungee&family=Rubik+Mono+One&display=swap');
 
 body {
     background-color: #f5f5f7; /* Very light gray */
@@ -436,6 +437,21 @@ button{
     font-family: "Rubik Mono One", sans-serif;
     transform-origin: center;
     transition: transform 0.3s ease;
+}
+
+#openingTitle{
+    font-family : "Afacad Flux", sans-serif;
+    font-size: 100px;
+    top: 50px;
+    position: absolute;
+    color: wheat;
+    opacity: 1;
+    display: flex;
+}
+#openingTitle.start{
+    transform: scale(5);
+    opacity: 0;
+    animation: scaleUp 1.5s ease-in-out forwards;
 }
 
 #openingButton:hover {
