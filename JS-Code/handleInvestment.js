@@ -42,6 +42,10 @@ async function handleInvestments(stock){
 
     checkIfProfitOrLoss = result.handleInvestmentFunc.investCalc;
 
+    if(coolDownState === false){
+        cooldownNoti("Cooldown in progress, please wait before investing again.");
+    };
+
     if(checkIfProfitOrLoss > 0){
         profit.play(); //play cha-ching sound
         flashGreen(); // Call the flashGreen function to flash the green box
