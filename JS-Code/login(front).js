@@ -49,6 +49,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
 
     console.log("checking credentials");
     if(getResponse.success == true){
+        await retrieveBalance();
         console.log("Logged in!");
         displayMainContent();
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
