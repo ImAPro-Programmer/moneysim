@@ -42,7 +42,7 @@ async function handleInvestments(stock){
 
     checkIfProfitOrLoss = result.handleInvestmentFunc.investCalc;
 
-    if(coolDownState === false){
+    if(coolDownState === true){
         cooldownNoti("Cooldown in progress, please wait before investing again.");
     };
 
