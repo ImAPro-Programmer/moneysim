@@ -67,6 +67,8 @@ document.getElementById("loginButton").addEventListener("click", async function 
         await retrieveBalance();
         console.log("Logged in!");
         displayMainContent();
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
         loginNoti(`Logged in! Hello ${usernameFromDB}! 👋`, true);
         settingButton.style.display = "block"; // Show the settings button
