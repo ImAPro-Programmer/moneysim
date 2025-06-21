@@ -27,17 +27,30 @@ document.getElementById("switchToLogin").addEventListener("click", function() {
 });
 
 
-function loginNoti(msg) {
-    const container = document.getElementById('notification-container');
-    const box = document.createElement('div');
-    box.className = 'login-notification';
-    box.textContent = msg;
-  
-    container.appendChild(box);
-  
-    setTimeout(() => {
-      box.remove();
-    }, 5000); // matches the fadeOut timing
+function loginNoti(msg, success) {
+    if(success === true){
+           const container = document.getElementById('notification-container');
+            const box = document.createElement('div');
+            box.className = 'login-notification';
+            box.textContent = msg;
+        
+            container.appendChild(box);
+        
+            setTimeout(() => {
+            box.remove();
+            }, 5000); // matches the fadeOut timing
+    }else{
+           const container = document.getElementById('notification-container');
+            const box = document.createElement('div');
+            box.className = 'failed-login';
+            box.textContent = msg;
+        
+            container.appendChild(box);
+        
+            setTimeout(() => {
+            box.remove();
+            }, 5000); // matches the fadeOut timing
+    }
 }
 
 
@@ -53,7 +66,7 @@ document.getElementById("loginButton").addEventListener("click", async function 
         console.log("Logged in!");
         displayMainContent();
         newUserDialog.textContent = `Logged in! Hello ${usernameFromDB}!`;
-        loginNoti(`Logged in! Hello ${usernameFromDB}! 👋`);
+        loginNoti(`Logged in! Hello ${usernameFromDB}! 👋`, true);
         settingButton.style.display = "block"; // Show the settings button
         randomEventGen();
         userBal = balanceFromDB;
@@ -63,8 +76,8 @@ document.getElementById("loginButton").addEventListener("click", async function 
         }, 5000);
         finalUsernameToUse = usernameFromDB;
         setInterval(randomEventGen, 60000); //edit later!!
-    }else if(getResponse.success == false){
+    }else{
         console.log("Invalid username or password!");
-        alert("Invalid username or password! (could be an interal error too, idk man)");
+        loginNoti(`Login Failed!`, false);
     }
 });
