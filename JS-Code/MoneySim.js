@@ -242,7 +242,7 @@ const canvas = document.getElementById("moneyCanvas");
     mouse.y = e.clientY;
     });
 
-    const NUM_DOLLARS = 200;
+    const NUM_DOLLARS = 100;
     const dollars = [];
     const dollarImg = new Image();
     dollarImg.src = "./misc-stuff/dollar.png";
