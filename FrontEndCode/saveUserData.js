@@ -12,6 +12,7 @@ function saveNotify(msg) {
   }
 
 const save = new Audio('./misc-stuff/save_soundeffect.mp3');
+save.volume = 0.3;
 
 async function saveAllData() {
     try {
