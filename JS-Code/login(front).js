@@ -54,6 +54,7 @@ function loginNoti(msg, success) {
 }
 
 const loginError = new Audio('./misc-stuff/login_error.mp3'); // Adjusted the path to be relative to the current file
+loginError.volume = 0.3;
 
 document.getElementById("loginButton").addEventListener("click", async function () {
     console.log("debugg");

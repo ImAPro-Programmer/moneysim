@@ -18,6 +18,7 @@ function notify(msg) {
   }  
 
 const ding = new Audio('./misc-stuff/ding_soundeffect.mp3');
+ding.volume = 0.3;
 
 async function randomEventGen(){
     console.log("debugging - start of randomEventGen()");
