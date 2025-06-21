@@ -222,6 +222,176 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+//dollar sign background
+const canvas = document.getElementById("moneyCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    // Resize canvas when window resizes
+    window.addEventListener("resize", () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    let mouse = { x: null, y: null };
+
+    window.addEventListener("mousemove", e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    });
+
+    const NUM_DOLLARS = 200;
+    const dollars = [];
+    const dollarImg = new Image();
+    dollarImg.src = "./misc-stuff/dollar.png";
+
+    // Dollar class: holds position, speed, size, rotation
+    class Dollar {
+        constructor() {
+            // When a new Dollar is created, immediately initialize it with random values.
+            // 'true' signals this is the first time, so start it somewhere on screen.
+            this.reset(true);
+        }
+
+        reset(firstTime = false) {
+            // Random horizontal position anywhere within the canvas width
+            this.x = Math.random() * width;
+
+            // Vertical position:
+            // If firstTime, start at random vertical position inside viewport,
+            // else start just above the visible screen (-50 pixels)
+            this.y = firstTime ? Math.random() * height : -50;
+
+            // Random size between 30 and 60 pixels
+            this.size = 30 + Math.random() * 30;
+
+            // Base falling speed
+            this.speedY = Math.random() * 2;
+
+            // Initial rotation angle (in radians), anywhere from 0 to 2π (360 degrees)
+            this.rotation = Math.random() * Math.PI * 2;
+
+            // Spin speed:
+            // Math.random() generates 0 to 1, subtract 0.5 gives range -0.5 to +0.5,
+            // multiply by 0.02 scales to -0.01 to +0.01 radians/frame spin speed.
+            // This means dollars spin slowly clockwise or counterclockwise.
+            this.spinSpeed = (Math.random() - 0.5) * 0.02;
+
+            // Horizontal velocity (dx), starts at 0 (no horizontal movement)
+            this.dx = 0;
+
+            // Vertical velocity (dy), start at the base falling speed (speedY)
+            this.dy = this.speedY;
+        }
+
+        update() {
+            // Only run mouse repulsion if mouse coordinates are known
+            if (mouse.x !== null && mouse.y !== null) {
+
+                // Calculate horizontal distance from dollar to mouse
+                const dx = this.x - mouse.x;
+
+                // Calculate vertical distance from dollar to mouse
+                const dy = this.y - mouse.y;
+
+                // Calculate straight-line distance between dollar and mouse (Pythagoras)
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                // Set repulsion radius: how close the mouse has to be to push the dollar
+                const radius = 100;
+
+                // If the dollar is inside the repulsion radius...
+                if (dist < radius) {
+                    // Calculate force proportional to proximity:
+                    // closer means stronger push, max force when mouse is exactly on dollar
+                    const force = (radius - dist) / radius;
+
+                    // Push dollar away from mouse horizontally:
+                    // (dx / dist) gives direction, multiplied by force and an arbitrary multiplier (2) for strength
+                    this.dx += (dx / dist) * force * 2;
+
+                    // Push dollar away vertically (same idea)
+                    this.dy += (dy / dist) * force * 2;
+                }
+            }
+
+            // Update dollar's position by applying velocity
+            this.x += this.dx;
+            this.y += this.dy;
+
+            // Increment rotation by spinSpeed radians per frame
+            this.rotation += this.spinSpeed;
+
+            // Apply friction to horizontal velocity to gradually reduce dx over time
+            this.dx *= 0.95;
+
+            // Smoothly bring vertical velocity back toward base falling speed (speedY)
+            // Keeps the dollar falling steadily despite repulsion effect.
+            this.dy = this.dy * 0.95 + this.speedY * 0.05;
+
+            // If the dollar falls below the screen or drifts off the sides,
+            // reset it to start falling from the top again
+            if (
+                this.y > height + this.size ||  // below bottom edge
+                this.x < -this.size ||           // off left edge
+                this.x > width + this.size       // off right edge
+            ) {
+              this.reset();
+            }
+        }
+
+        draw() {
+            // Save current canvas state (position, rotation, etc.)
+            ctx.save();
+
+            // Move canvas origin to dollar's (x,y) position
+            ctx.translate(this.x, this.y);
+
+            // Rotate canvas by current rotation angle (in radians)
+            ctx.rotate(this.rotation);
+
+            // Draw the dollar image, centered at (0,0)
+            // Negative half size shifts so drawing is centered on position
+            ctx.drawImage(
+            dollarImg,
+            -this.size / 2,
+            -this.size / 2,
+            this.size,
+            this.size
+            );
+
+            // Restore canvas state so next draw is not affected by translate/rotate
+            ctx.restore();
+        }
+        }
+
+
+
+    // Start animation when image loads
+    dollarImg.onload = () => {
+      for (let i = 0; i < NUM_DOLLARS; i++) {
+        dollars.push(new Dollar());
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      for (const dollar of dollars) {
+        dollar.update();
+        dollar.draw();
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+
+
+
 
 
 
