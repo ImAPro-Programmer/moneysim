@@ -17,6 +17,8 @@ function notify(msg) {
     }, 5000); // matches the fadeOut timing
   }  
 
+const ding = new Audio('./misc-stuff/ding_soundeffect.mp3');
+
 async function randomEventGen(){
     console.log("debugging - start of randomEventGen()");
     const response = await fetch("https://moneysimworker.coolreybansal.workers.dev/balanceInfo/randomEvent", {
@@ -47,6 +49,7 @@ async function randomEventGen(){
       
       // Usage
     notify("A new event has occured, check the news! 📰");
+    ding.play();
 
     console.log(serverReply);//remove after production
     console.log(boostfromServer); //delete after production

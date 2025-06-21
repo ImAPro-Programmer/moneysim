@@ -11,6 +11,8 @@ function saveNotify(msg) {
     }, 5000); // matches the fadeOut timing
   }
 
+const save = new Audio('./misc-stuff/save_soundeffect.mp3');
+
 async function saveAllData() {
     try {
         // Await the fetch call to ensure the response is ready
@@ -35,6 +37,7 @@ async function saveAllData() {
         const gotResponse = await request.json();  // Await to parse the response
         //console.log(gotResponse);
         saveNotify("Data saved successfully! ✅");
+        save.play();
     } catch (errorFromSend) {
         console.error(`We found an error! ${errorFromSend.message}`);
     }

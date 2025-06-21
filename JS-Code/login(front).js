@@ -53,6 +53,7 @@ function loginNoti(msg, success) {
     }
 }
 
+const loginError = new Audio('./misc-stuff/login_error.mp3'); // Adjusted the path to be relative to the current file
 
 document.getElementById("loginButton").addEventListener("click", async function () {
     console.log("debugg");
@@ -79,5 +80,6 @@ document.getElementById("loginButton").addEventListener("click", async function 
     }else{
         console.log("Invalid username or password!");
         loginNoti(`Login Failed!`, false);
+        loginError.play(); // Play the login error sound
     }
 });
