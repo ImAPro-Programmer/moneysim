@@ -25,7 +25,7 @@ audio.onended = () => {
 
 function startMusic() {
     current = Math.floor(Math.random() * playlist.length); // update current!
-    audio.volume = 0.2;
+    audio.volume = 0.03;
     audio.src = playlist[current];
     audio.autoplay = true;
     audio.play().catch(err => {
