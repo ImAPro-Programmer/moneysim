@@ -492,5 +492,7 @@ button{
 /* dollar background */
 canvas{
     display: block;
+    z-index: 0;
+    pointer-events: none; /* Prevents canvas from blocking clicks */
 }
 
